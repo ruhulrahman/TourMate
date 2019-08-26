@@ -1,5 +1,5 @@
 # TourMate
-TourMate App for BITM final submission
+#### TourMate App for BITM final submission
 
 <img src="logo.png" width="300" height="500">
 
