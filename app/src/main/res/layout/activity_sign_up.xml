@@ -18,8 +18,8 @@
             android:text="SignUp Panel"
             android:padding="10dp"
             android:shadowColor="@android:color/background_dark"
-            android:textSize="@android:dimen/app_icon_size"
-            android:textColor="@color/blackLigh"
+            android:textSize="30dp"
+            android:textColor="@color/blackLight"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -48,7 +48,7 @@
             android:textColor="@android:color/white"
             android:textAllCaps="false"
             android:padding="15dp"
-            android:background="@color/nasturcianFlower"
+            android:background="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
