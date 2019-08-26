@@ -1,6 +1,8 @@
 # TourMate
 TourMate App for BITM final submission
 
+<img src="logo.png" width="300" height="600">
+
 ![](logo.png)
 
 # If you want to work with me, then follow some instruction that is given below
