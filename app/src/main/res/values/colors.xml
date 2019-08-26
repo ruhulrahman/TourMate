@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#d35400</color>
+    <color name="colorGreenPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="sunflower">#f1c40f</color>
+    <color name="orange">#f39c12</color>
+    <color name="carrot">#e67e22</color>
+    <color name="pumpkin">#d35400</color>
+    <color name="pomegranet">#c0392b</color>
+    <color name="clouds">#ecf0f1</color>
+    <color name="silver">#bdc3c7</color>
+    <color name="emarald">#2ecc71</color>
+    <color name="nephritis">#27ae60</color>
+    <color name="peterRiver">#3498db</color>
+    <color name="belizeHole">#2980b9</color>
+    <color name="amethyst">#9b59b6</color>
+    <color name="wisteria">#8e44ad</color>
+    <color name="wetAsphalt">#34495e</color>
+    <color name="midnightBlue">#2c3e50</color>
+    <color name="downloadProgress">#4cd137</color>
+    <color name="skirretGreen">#44bd32</color>
+    <color name="seabrook">#487eb0</color>
+    <color name="naval">#40739e</color>
+    <color name="nasturcianFlower">#e84118</color>
+    <color name="harleyDavidsonOrange">#c23616</color>
+    <color name="blueNights">#353b48</color>
+    <color name="electromagnetic">#2f3640</color>
+    <color name="riseInShine">#fbc531</color>
+    <color name="nanohanachaGold">#e1b12c</color>
+    <color name="periwinkle">#9c88ff</color>
+    <color name="mattPurple">#8c7ae6</color>
+    <color name="black">#000000</color>
+    <color name="blackLigh">#5C5C5C</color>
+</resources>
