@@ -3,8 +3,6 @@ TourMate App for BITM final submission
 
 <img src="logo.png" width="300" height="500">
 
-![](logo.png)
-
 # If you want to work with me, then follow some instruction that is given below
 	1. Login your github account
 	2. Fork TourMate repository
