@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class SpashActivity extends AppCompatActivity {
     private ImageView logoIV;
-    private TextView tourmateTV;
+    private TextView tourmateTV, txtTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +36,14 @@ public class SpashActivity extends AppCompatActivity {
 
         logoIV = findViewById(R.id.logoIV);
         tourmateTV = findViewById(R.id.tourmateTV);
+        txtTV = findViewById(R.id.txtTV);
 
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        logoIV.startAnimation(animation);
-        tourmateTV.startAnimation(animation);
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        Animation zoomIn = AnimationUtils.loadAnimation(this, R.anim.zoom_in);
+        Animation slideDown = AnimationUtils.loadAnimation(this, R.anim.slide_down);
+
+        logoIV.startAnimation(zoomIn);
+        tourmateTV.startAnimation(slideDown);
+        txtTV.startAnimation(fadeIn);
     }
 }
