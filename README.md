@@ -1,6 +1,8 @@
 # TourMate
 TourMate App for BITM final submission
+
 ![](logo.png)
+
 # If you want to work with me, then follow some instruction that is given below
 	1. Login your github account
 	2. Fork TourMate repository
