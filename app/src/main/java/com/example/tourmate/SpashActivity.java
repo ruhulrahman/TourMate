@@ -40,10 +40,12 @@ public class SpashActivity extends AppCompatActivity {
 
         Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         Animation zoomIn = AnimationUtils.loadAnimation(this, R.anim.zoom_in);
+        Animation zoomOut = AnimationUtils.loadAnimation(this, R.anim.zoom_out);
         Animation slideDown = AnimationUtils.loadAnimation(this, R.anim.slide_down);
+        Animation slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up);
 
-        logoIV.startAnimation(zoomIn);
-        tourmateTV.startAnimation(slideDown);
+        logoIV.startAnimation(zoomOut);
+        tourmateTV.startAnimation(slideUp);
         txtTV.startAnimation(fadeIn);
     }
 }
