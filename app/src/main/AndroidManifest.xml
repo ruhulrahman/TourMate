@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUpActivity"
-            android:theme="@style/noActionBar"></activity>
+        <activity android:name=".AddExpenseActivity"></activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:theme="@style/noActionBar" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity"
-            android:theme="@style/noActionBar"/>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/noActionBar" />
         <activity
             android:name=".SpashActivity"
             android:theme="@style/noActionBar">
