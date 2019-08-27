@@ -1,4 +1,4 @@
-package com.example.tourmate;
+package com.example.tourmate.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.tourmate.R;
 
 public class SpashActivity extends AppCompatActivity {
     private ImageView logoIV;
