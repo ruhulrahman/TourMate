@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tour Mate</string>
+    <string name="click_signup"><u>Click SignUp</u></string>
+    <string name="click_login"><u>Click Login</u></string>
 </resources>
