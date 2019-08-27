@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tourmate">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +24,7 @@
             android:name=".activity.SignUpActivity"
             android:theme="@style/noActionBar" />
         <activity
-            android:name=".activity.AddExpenseActivity$LoginActivity"
+            android:name=".activity.LoginActivity"
             android:theme="@style/noActionBar" />
         <activity
             android:name=".activity.SpashActivity"
@@ -30,6 +32,18 @@
 
         </activity>
         <activity android:name=".activity.MainActivity" />
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY"/>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
     </application>
 
 </manifest>
