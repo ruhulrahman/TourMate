@@ -2,4 +2,21 @@
     <string name="app_name">Tour Mate</string>
     <string name="click_signup"><u>Click SignUp</u></string>
     <string name="click_login"><u>Click Login</u></string>
+    <string name="add_expense">Add Expense</string>
+
+    <string name="cost_prompt">Choose a Cost Type</string>
+    <string-array name="cost_arrays">
+        <item>Shoping Cost</item>
+        <item>House Rent Cost</item>
+        <item>Hand Cost</item>
+        <item>Food Cost</item>
+    </string-array>
+
+    <string name="payment_prompt">Choose a Payment Type</string>
+    <string-array name="payment_arrays">
+        <item>Cash Payment</item>
+        <item>Bkash or Others Payment</item>
+        <item>Card Payment</item>
+    </string-array>
+
 </resources>

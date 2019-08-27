@@ -13,4 +13,15 @@
         <item name="windowActionBar">false</item>
     </style>
 
+    <style name="ActionBarWhite" parent="AppTheme">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+    <style name="ActionBarPomegrane" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTop</item>
+    </style>
+
 </resources>
