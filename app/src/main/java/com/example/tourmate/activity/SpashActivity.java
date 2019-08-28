@@ -30,6 +30,7 @@ public class SpashActivity extends AppCompatActivity {
                 finally {
                     Intent intent = new Intent(SpashActivity.this, LoginActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         };

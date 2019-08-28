@@ -2,15 +2,25 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:icon="@drawable/ic_location_on_black_24dp"
-        android:title="Tour Plan"
+        android:id="@+id/trip"
+        android:icon="@drawable/ic_directions_bus_black_24dp"
+        android:title="Trip"
         app:showAsAction="always" />
     <item
-        android:title="Tour Expense"
+        android:icon="@drawable/ic_photo_camera_black_24dp"
+        android:id="@+id/memories"
+        android:title="Memories"
         app:showAsAction="always" />
-    <item android:title="Tour Member" />
+
     <item
-        android:checkable="false"
-        android:title="Tour Report"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_account_balance_wallet_black_24dp"
+        android:id="@+id/wallet"
+        android:title="Wallet"
+        app:showAsAction="always" />
+
+    <item
+        android:icon="@drawable/ic_person_black_24dp"
+        android:id="@+id/profile"
+        android:title="Profile"
+        app:showAsAction="always" />
 </menu>

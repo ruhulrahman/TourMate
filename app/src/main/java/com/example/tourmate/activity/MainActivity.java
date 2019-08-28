@@ -9,6 +9,10 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.tourmate.R;
+import com.example.tourmate.fragment.MemoriesFragment;
+import com.example.tourmate.fragment.ProfileFragment;
+import com.example.tourmate.fragment.TripFragment;
+import com.example.tourmate.fragment.WalletFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,13 +24,16 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_product:
-                    replaceFragment(new ProductFragment());
+                case R.id.trip:
+                    replaceFragment(new TripFragment());
                     return true;
-                case R.id.navigation_cart:
-                    replaceFragment(new CartFragment());
+                case R.id.memories:
+                    replaceFragment(new MemoriesFragment());
                     return true;
-                case R.id.navigation_profile:
+                case R.id.wallet:
+                    replaceFragment(new WalletFragment());
+                    return true;
+                case R.id.profile:
                     replaceFragment(new ProfileFragment());
                     return true;
             }
@@ -45,6 +52,6 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        replaceFragment(new ProductFragment());;
+        replaceFragment(new TripFragment());;
     }
 }
