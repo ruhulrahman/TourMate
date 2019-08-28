@@ -3,7 +3,7 @@
 
 <img src="logo.png" width="300" height="500">
 
-## Our Team
+## Our Tourmate App Developer Team
  - [Ruhul Amin](https://www.facebook.com/Ruhul14.02)
  - [Rifat Hossain](https://www.facebook.com/rifat.hossain.007)
  - [Provat Kumar](https://www.facebook.com/provat.kumar.754)
