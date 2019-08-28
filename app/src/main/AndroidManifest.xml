@@ -39,11 +39,7 @@
             android:name=".activity.AddExpenseActivity"
             android:label="@string/add_expense"
             android:theme="@style/ActionBarPomegrane">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.SignUpActivity"
@@ -54,10 +50,18 @@
         <activity
             android:name=".activity.SpashActivity"
             android:theme="@style/noActionBar" />
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.MainActivity"
+            android:theme="@style/noActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyC9DZV98bXVgZEYmV1VJyBMh_mOy7PnLDE" />
 
         <meta-data
             android:name="com.google.android.gms.version"
