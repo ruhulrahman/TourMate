@@ -4,7 +4,7 @@
 <img src="logo.png" width="300" height="500">
 
 ## Our Team
-[Ruhul Amin](https://www.facebook.com/Ruhul14.02)
+ - [Ruhul Amin](https://www.facebook.com/Ruhul14.02)
 
 ## If you want to work with me, then follow some instruction that is given below
 	1. Login your github account
