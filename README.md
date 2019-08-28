@@ -13,9 +13,9 @@
 1. Login your github account
 2. Fork TourMate repository
 3. Clone helper branch from here
- 		```sh
-		$ git clone -b helper https://github.com/ruhulrahman/TourMate.git
-		```
+	```
+	$ git clone -b helper https://github.com/ruhulrahman/TourMate.git
+	```
 	
 ## Now work in your project and then follow some instructions for upload your whole files on github
 	1. $ git add .
