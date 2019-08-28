@@ -4,10 +4,10 @@
 <img src="logo.png" width="300" height="500">
 
 ## Our Tourmate App Developer Team
- - <img src="ruhul.jpg" width="50" height="50">[Ruhul Amin](https://www.facebook.com/Ruhul14.02) master branch
- - <img src="rifat.jpg" width="50" height="50">[Rifat Hossain](https://www.facebook.com/rifat.hossain.007) rifat branch
- - <img src="provat.jpg" width="50" height="50">[Provat Kumar](https://www.facebook.com/provat.kumar.754) provat branch
- - <img src="rifatkhan.jpg" width="50" height="50">[রিফাতুল হক খান](https://www.facebook.com/rifatulhaquekhan) rifatkhan
+ - <img src="ruhul.jpg" width="50" height="50"> [Ruhul Amin](https://www.facebook.com/Ruhul14.02) master branch
+ - <img src="rifat.jpg" width="50" height="50"> [Rifat Hossain](https://www.facebook.com/rifat.hossain.007) rifat branch
+ - <img src="provat.jpg" width="50" height="50"> [Provat Kumar](https://www.facebook.com/provat.kumar.754) provat branch
+ - <img src="rifatkhan.jpg" width="50" height="50"> [রিফাতুল হক খান](https://www.facebook.com/rifatulhaquekhan) rifatkhan
  
 ## If you want to work with me, then follow some instruction that is given below
 1. Login your github account
