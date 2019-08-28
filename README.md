@@ -23,7 +23,7 @@
 	3. $ git push
 If you don't config your Git Bash, then config your Git Bash by your github username and passwork
 	
-## Now You have to sent pull request for merge branch help with master. So folow this instructions
+## Now You have to sent pull request for merge branch helper with master. So folow this instructions
 	1. git request-pull v1.0 https://github.com/ruhulrahman/TourMate.git helper
 (Mension that: v means verion. v1.0 means version 1.0 and helper is a branch)
 ## Now have to merge this repository from master branch. Command For merge this repository is given below
