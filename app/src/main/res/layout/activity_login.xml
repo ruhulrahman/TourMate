@@ -4,75 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pomegranet"
-    tools:context=".LoginActivity">
+    tools:context=".activity.LoginActivity">
 
     <LinearLayout
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
-            android:text="Login Panel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
             android:padding="10dp"
             android:shadowColor="@android:color/background_dark"
-            android:textSize="@android:dimen/app_icon_size"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="Login Panel"
+            android:textColor="@color/blackLight"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
         <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Name"
-            android:padding="15dp"
             android:background="@android:color/white"
             android:drawableLeft="@drawable/ic_person_black_24dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:hint="Name"
+            android:padding="15dp" />
 
         <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Password"
-            android:padding="15dp"
             android:background="@android:color/white"
             android:drawableLeft="@drawable/ic_lock_black_24dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:hint="Password"
+            android:padding="15dp" />
 
         <Button
-            android:layout_marginTop="20dp"
-            android:text="Login"
-            android:textColor="@android:color/white"
-            android:textAllCaps="false"
-            android:padding="15dp"
-            android:background="@color/nasturcianFlower"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buttonshape"
+            android:padding="15dp"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:shadowColor="@android:color/background_dark"
                 android:text="Don't have an account? "
-                android:layout_marginTop="20dp"
-                android:shadowColor="@android:color/background_dark"
-                android:textColor="@android:color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textColor="@android:color/black" />
+
             <TextView
-                android:text="Click SignUp"
-                android:onClick="signUp"
-                android:layout_marginTop="20dp"
-                android:shadowColor="@android:color/background_dark"
-                android:textColor="@color/black"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="signUp"
+                android:shadowColor="@android:color/background_dark"
+                android:text="@string/click_signup"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
