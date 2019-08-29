@@ -2,6 +2,7 @@ package com.example.tourmate.helper;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
@@ -44,10 +45,37 @@ public class ExpenseDatabase extends Database {
         contentValues.put(COL_TIME, time);
         contentValues.put(COL_DESCRIPTION, desc);
         contentValues.put(COL_COST_TYPE, cost);
+
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         long id = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         sqLiteDatabase.close();
         return id;
+    }
+
+    public Cursor showData(){
+        String showAll = "Select * From "+TABLE_NAME;
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(showAll, null);
+        return  cursor;
+    }
+
+    public void deleteData(int id){
+        getReadableDatabase().delete(TABLE_NAME, "Id=?", new String[]{String.valueOf(id)});
+    }
+
+    public void updateData(int id, String amount, String payment,String date,String time,String desc,String cost){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_ID, id);
+        contentValues.put(COL_AMOUNT, amount);
+        contentValues.put(COL_PAYMENT_TYPE, payment);
+        contentValues.put(COL_DATE, date);
+        contentValues.put(COL_TIME, time);
+        contentValues.put(COL_DESCRIPTION, desc);
+        contentValues.put(COL_COST_TYPE, cost);
+
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        sqLiteDatabase.update(TABLE_NAME, contentValues, "Id=?", new String[]{String.valueOf(id)});
+        sqLiteDatabase.close();
     }
 
 }
