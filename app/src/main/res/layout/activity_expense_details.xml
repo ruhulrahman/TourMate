@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    tools:context=".activity.ExpenseDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/backButton"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/amountTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="2000"
+            android:textColor="@color/nasturcianFlower"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/paymentTypeTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="20dp"
+            android:text="Shoping Cost"
+            android:textColor="@color/colorGreenPrimaryDark"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/dateTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="29-08-2019"
+            android:textColor="@color/skirretGreen"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/costTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="Cost Type"
+            android:textColor="@color/belizeHole"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/descriptionTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="Description"
+            android:textColor="@color/blackLight"
+            android:textSize="22dp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/blackLight"
+        android:onClick="back"
+        android:src="@drawable/ic_keyboard_backspace_black_24dp"
+        android:tint="@color/white"
+        app:fabSize="auto">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+</RelativeLayout>

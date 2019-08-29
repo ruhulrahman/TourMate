@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ViewExpenseActivity"></activity>
+        <activity android:name=".activity.ExpenseDetailsActivity"></activity>
+        <activity android:name=".activity.ViewExpenseActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -32,7 +33,7 @@
         <activity
             android:name=".activity.AddExpenseActivity"
             android:label="@string/add_expense"
-            android:theme="@style/ActionBarPomegrane"></activity>
+            android:theme="@style/ActionBarPomegrane" />
         <activity
             android:name=".activity.SignUpActivity"
             android:theme="@style/noActionBar" />
@@ -63,9 +64,9 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

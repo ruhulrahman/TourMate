@@ -7,6 +7,18 @@
     android:orientation="vertical"
     tools:context=".activity.ViewExpenseActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/blackLight"
+        android:onClick="back"
+        android:src="@drawable/ic_keyboard_backspace_black_24dp"
+        android:tint="@color/white"
+        app:fabSize="auto">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/expenseViewRV"
         android:layout_width="match_parent"
