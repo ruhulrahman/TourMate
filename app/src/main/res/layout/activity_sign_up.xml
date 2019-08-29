@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".activity.SignUpActivity">
 
     <LinearLayout
         android:layout_centerInParent="true"
@@ -15,11 +15,12 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:background="@android:color/white"
             android:text="SignUp Panel"
             android:padding="10dp"
             android:shadowColor="@android:color/background_dark"
-            android:textSize="@android:dimen/app_icon_size"
-            android:textColor="@color/blackLigh"
+            android:textSize="30dp"
+            android:textColor="@color/blackLight"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -48,7 +49,7 @@
             android:textColor="@android:color/white"
             android:textAllCaps="false"
             android:padding="15dp"
-            android:background="@color/nasturcianFlower"
+            android:background="@drawable/buttonshape"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -64,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
-                android:text="Click Login"
+                android:text="@string/click_login"
                 android:onClick="LoginClick"
                 android:layout_marginTop="20dp"
                 android:shadowColor="@android:color/background_dark"
