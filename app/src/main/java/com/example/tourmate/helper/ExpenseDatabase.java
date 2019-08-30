@@ -24,9 +24,9 @@ public class ExpenseDatabase extends Database {
         super(context, DATABASE_NAME, null, VERSION);
     }
 
-    public ExpenseDatabase(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }
+//    public ExpenseDatabase(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+//        super(context, name, factory, version);
+//    }
 
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(create_table);
@@ -37,7 +37,21 @@ public class ExpenseDatabase extends Database {
 
     }
 
-    public long insertData(String amount, String payment,String date,String time,String desc,String cost){
+    public long insertData(Double amount, String payment,String date,String time, String cost){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_AMOUNT, amount);
+        contentValues.put(COL_PAYMENT_TYPE, payment);
+        contentValues.put(COL_DATE, date);
+        contentValues.put(COL_TIME, time);
+        contentValues.put(COL_COST_TYPE, cost);
+
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        long id = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
+        sqLiteDatabase.close();
+        return id;
+    }
+
+    public long insertData(Double amount, String payment,String date,String time,String desc,String cost){
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_AMOUNT, amount);
         contentValues.put(COL_PAYMENT_TYPE, payment);
@@ -51,6 +65,7 @@ public class ExpenseDatabase extends Database {
         sqLiteDatabase.close();
         return id;
     }
+
 
     public Cursor showData(){
         String showAll = "Select * From "+TABLE_NAME;

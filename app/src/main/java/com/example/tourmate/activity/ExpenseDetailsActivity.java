@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.tourmate.R;
+import com.example.tourmate.model.Expense;
+
+import java.util.List;
 
 public class ExpenseDetailsActivity extends AppCompatActivity {
-
+    private List<Expense> expenses;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

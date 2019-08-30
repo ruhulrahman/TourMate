@@ -23,6 +23,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:hint="Add Amount" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
@@ -69,7 +70,7 @@
             <EditText
                 android:id="@+id/descriptionET"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:maxLines="3"
