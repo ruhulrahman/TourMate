@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.tourmate.R;
 import com.example.tourmate.fragment.MemoriesFragment;
+import com.example.tourmate.fragment.NearbyFragment;
 import com.example.tourmate.fragment.ProfileFragment;
 import com.example.tourmate.fragment.TripFragment;
 import com.example.tourmate.fragment.WalletFragment;
@@ -30,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.memories:
                     replaceFragment(new MemoriesFragment());
                     return true;
-                case R.id.wallet:
-                    replaceFragment(new WalletFragment());
+                case R.id.nearByMap:
+                    replaceFragment(new NearbyFragment());
                     return true;
                 case R.id.profile:
                     replaceFragment(new ProfileFragment());
