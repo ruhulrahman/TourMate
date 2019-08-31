@@ -1,4 +1,4 @@
-package com.example.tourmate.activity;
+package com.example.tourmate.activity.tour;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.tourmate.R;
 
-public class DetailsTourActivity extends AppCompatActivity {
+public class AddTourActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details_tour);
+        setContentView(R.layout.activity_add_tour);
     }
 }

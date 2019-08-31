@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tourmate.R;
-import com.example.tourmate.activity.ExpenseDetailsActivity;
+import com.example.tourmate.activity.expense.ExpenseDetailsActivity;
 import com.example.tourmate.helper.ExpenseDatabase;
 import com.example.tourmate.model.Expense;
 
@@ -53,6 +53,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
                 intent.putExtra("time", expense.getTime());
                 intent.putExtra("desc", expense.getDesc());
                 intent.putExtra("costType", expense.getCostType());
+                intent.putExtra("tourId", expense.getTourId());
                 context.startActivity(intent);
             }
         });

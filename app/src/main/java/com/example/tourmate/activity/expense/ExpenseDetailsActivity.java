@@ -1,4 +1,4 @@
-package com.example.tourmate.activity;
+package com.example.tourmate.activity.expense;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,11 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.tourmate.EditExpenseActivity;
 import com.example.tourmate.R;
 import com.example.tourmate.model.Expense;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ExpenseDetailsActivity extends AppCompatActivity {

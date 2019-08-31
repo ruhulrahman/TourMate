@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp"
-        tools:context=".EditExpenseActivity">
+        tools:context=".activity.expense.EditExpenseActivity">
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/addAMount_text_input_layout"
             android:layout_width="match_parent"
