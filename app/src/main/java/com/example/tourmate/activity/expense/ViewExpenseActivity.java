@@ -1,4 +1,4 @@
-package com.example.tourmate.activity;
+package com.example.tourmate.activity.expense;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,6 +27,7 @@ public class ViewExpenseActivity extends AppCompatActivity {
     private int id;
     private Double amount;
     private String payment, date, time, desc, costType;
+    private int tourId;
 
 
     @Override
@@ -58,7 +59,8 @@ public class ViewExpenseActivity extends AppCompatActivity {
             time = cursor.getString(cursor.getColumnIndex(helper.COL_TIME));
             desc = cursor.getString(cursor.getColumnIndex(helper.COL_TIME));
             costType = cursor.getString(cursor.getColumnIndex(helper.COL_COST_TYPE));
-            expenses.add(new Expense(id, amount, payment, date, time, desc, costType));
+            tourId = cursor.getInt(cursor.getColumnIndex(helper.COL_TOUR_ID));
+            expenses.add(new Expense(id, amount, payment, date, time, desc, costType, tourId));
             adapter.notifyDataSetChanged();
         }
     }

@@ -167,7 +167,7 @@ public class NearbyFragment extends Fragment implements
                 if (task.isSuccessful()){
                     Location currentLocation= (Location) task.getResult();
                     LatLng location = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,12));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15));
                 }
 
             }
