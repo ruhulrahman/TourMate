@@ -1,6 +1,7 @@
 package com.example.tourmate.model;
 
 public class Expense {
+    private int id;
     private Double amount;
     private String payment, date, time, desc, costType;
 
@@ -8,7 +9,8 @@ public class Expense {
 
     }
 
-    public Expense(Double amount, String payment, String date, String time, String desc, String costType) {
+    public Expense(int id, Double amount, String payment, String date, String time, String desc, String costType) {
+        this.id = id;
         this.amount = amount;
         this.payment = payment;
         this.date = date;
@@ -17,6 +19,9 @@ public class Expense {
         this.costType = costType;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public Double getAmount() {
         return amount;

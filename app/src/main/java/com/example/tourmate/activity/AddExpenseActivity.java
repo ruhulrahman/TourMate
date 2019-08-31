@@ -134,6 +134,7 @@ public class AddExpenseActivity extends AppCompatActivity {
                             binding.costSpinner.setSelection(0);
                         }
                         Toast.makeText(AddExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(AddExpenseActivity.this, ViewExpenseActivity.class));
                     }else{
                         long id = helper.insertData(amount, payment, date, time, desc, costType);
                         result = true;
@@ -146,6 +147,7 @@ public class AddExpenseActivity extends AppCompatActivity {
                             binding.costSpinner.setSelection(0);
                         }
                         Toast.makeText(AddExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(AddExpenseActivity.this, ViewExpenseActivity.class));
                     }
 
 

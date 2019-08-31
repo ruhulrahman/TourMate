@@ -12,7 +12,11 @@
         <activity android:name=".activity.DetailsTourActivity" />
         <activity android:name=".activity.AddTourActivity" />
         <activity android:name=".activity.ExpenseDetailsActivity" />
-        <activity android:name=".activity.ViewExpenseActivity" />
+        <activity android:name=".activity.ViewExpenseActivity"
+            android:label="@string/add_expense"
+            android:theme="@style/ActionBarPomegrane">
+
+        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

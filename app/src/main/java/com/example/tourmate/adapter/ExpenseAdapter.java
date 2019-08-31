@@ -12,16 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tourmate.R;
 import com.example.tourmate.activity.ExpenseDetailsActivity;
+import com.example.tourmate.helper.ExpenseDatabase;
 import com.example.tourmate.model.Expense;
 
 import java.util.List;
 
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHolder> {
     private List<Expense> expenses;
+    private ExpenseDatabase helper;
     private Context context;
 
-    public ExpenseAdapter(List<Expense> expenses, Context context) {
+    public ExpenseAdapter(List<Expense> expenses, ExpenseDatabase helper, Context context) {
         this.expenses = expenses;
+        this.helper = helper;
         this.context = context;
     }
 
@@ -33,14 +36,14 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final Expense expense = expenses.get(position);
         holder.amount.setText(String.valueOf(expense.getAmount()));
-        holder.payment.setText(String.valueOf(expense.getPayment()));
-        holder.date.setText(String.valueOf(expense.getDate()));
-        holder.time.setText(String.valueOf(expense.getTime()));
-        holder.desc.setText(String.valueOf(expense.getDesc()));
-        holder.costType.setText(String.valueOf(expense.getCostType()));
+        holder.payment.setText(expense.getPayment());
+        holder.date.setText(expense.getDate());
+        holder.time.setText(expense.getTime());
+        holder.desc.setText(expense.getDesc());
+        holder.costType.setText(expense.getCostType());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +56,17 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
                 intent.putExtra("desc", expense.getDesc());
                 intent.putExtra("costType", expense.getCostType());
                 context.startActivity(intent);
+            }
+        });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                helper = new ExpenseDatabase(context);
+                helper.deleteData(expense.getId());
+                expenses.remove(position);
+                notifyDataSetChanged();
+                return false;
             }
         });
     }
