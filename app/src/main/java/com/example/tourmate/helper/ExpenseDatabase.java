@@ -9,16 +9,16 @@ public class ExpenseDatabase extends Database {
 
     public static String TABLE_NAME = "expense";
     public static String COL_ID = "Id";
-    public static String TOUR_ID = "TourId";
     public static String COL_AMOUNT = "Amount";
     public static String COL_PAYMENT_TYPE = "PaymentType";
     public static String COL_DATE = "Date";
     public static String COL_TIME = "Time";
     public static String COL_DESCRIPTION = "Description";
     public static String COL_COST_TYPE = "CostType";
+    public static String COL_TOUR_ID = "TourId";
     public Context contex;
 
-    public static String create_table = "create table " + TABLE_NAME + "(Id integer primary key,TourId Text, Amount Text, PaymentType Text, Date Text, Time Text, Description Text, CostType Text)";
+    public static String create_table = "create table " + TABLE_NAME + "(Id integer primary key, Amount Text, PaymentType Text, Date Text, Time Text, Description Text, CostType Text, TourId Text)";
 
     public ExpenseDatabase(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
@@ -39,12 +39,12 @@ public class ExpenseDatabase extends Database {
 
     public long insertData(Double amount, String payment, String date, String time, String cost, int tourId) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(TOUR_ID, tourId);
         contentValues.put(COL_AMOUNT, amount);
         contentValues.put(COL_PAYMENT_TYPE, payment);
         contentValues.put(COL_DATE, date);
         contentValues.put(COL_TIME, time);
         contentValues.put(COL_COST_TYPE, cost);
+        contentValues.put(COL_TOUR_ID, tourId);
 
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         long id = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
@@ -55,12 +55,12 @@ public class ExpenseDatabase extends Database {
     public long insertData(Double amount, String payment, String date, String time, String desc, String cost, int tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_AMOUNT, amount);
-        contentValues.put(TOUR_ID, tourId);
         contentValues.put(COL_PAYMENT_TYPE, payment);
         contentValues.put(COL_DATE, date);
         contentValues.put(COL_TIME, time);
         contentValues.put(COL_DESCRIPTION, desc);
         contentValues.put(COL_COST_TYPE, cost);
+        contentValues.put(COL_TOUR_ID, tourId);
 
         SQLiteDatabase sqLiteDatabase = null;
         sqLiteDatabase = this.getWritableDatabase();
@@ -85,13 +85,13 @@ public class ExpenseDatabase extends Database {
     public long updateData(int id, Double amount, String payment, String date, String time, String desc, String cost, int tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_ID, id);
-        contentValues.put(TOUR_ID, tourId);
         contentValues.put(COL_AMOUNT, amount);
         contentValues.put(COL_PAYMENT_TYPE, payment);
         contentValues.put(COL_DATE, date);
         contentValues.put(COL_TIME, time);
         contentValues.put(COL_DESCRIPTION, desc);
         contentValues.put(COL_COST_TYPE, cost);
+        contentValues.put(COL_TOUR_ID, tourId);
 
         SQLiteDatabase sqLiteDatabase = null;
         sqLiteDatabase = this.getReadableDatabase();
@@ -103,12 +103,12 @@ public class ExpenseDatabase extends Database {
     public long updateData(int id, Double amount, String payment, String date, String time, String cost, int tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_ID, id);
-        contentValues.put(TOUR_ID, tourId);
         contentValues.put(COL_AMOUNT, amount);
         contentValues.put(COL_PAYMENT_TYPE, payment);
         contentValues.put(COL_DATE, date);
         contentValues.put(COL_TIME, time);
         contentValues.put(COL_COST_TYPE, cost);
+        contentValues.put(COL_TOUR_ID, tourId);
 
         SQLiteDatabase sqLiteDatabase = null;
         sqLiteDatabase = this.getReadableDatabase();

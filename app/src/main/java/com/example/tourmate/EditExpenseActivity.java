@@ -134,7 +134,7 @@ public class EditExpenseActivity extends AppCompatActivity {
 
 
     private void updateExpenseData() {
-        binding.saveBtn.setOnClickListener(new View.OnClickListener() {
+        binding.updateExpenseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 amount = Double.parseDouble(binding.addAMountET.getText().toString());
