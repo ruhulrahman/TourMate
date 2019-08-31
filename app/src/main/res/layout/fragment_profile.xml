@@ -1,33 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.ProfileFragment">
-    <FrameLayout
+    <LinearLayout
+        android:background="@drawable/gradianttbackground"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
+        android:layout_height="350dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginLeft="45dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/provat" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Provat Mahato"
+            android:layout_marginLeft="59dp"
+            android:textColor="#D3724B"
+            android:textStyle="bold"
+            android:textSize="42dp"/>
+        />
+        <TextView
+
+            android:layout_marginTop="44dp"
+            android:textColor="#BA30189B"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:src="@drawable/image"
-                android:scaleType="fitXY"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"/>
-            <TextView
-                android:textSize="22dp"
-                android:background="@color/colorPrimaryDark"
-                android:textColor="@color/white"
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Provat Kumar" />
-        </LinearLayout>
-    </FrameLayout>
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_phone_black_24dp"
+            android:text="+8801770680326"
+            android:textSize="25dp"
+            android:paddingLeft="33dp"
+            android:drawablePadding="22dp"
+            />
+        <TextView
 
-    <!-- TODO: Update blank fragment layout -->
+            android:layout_marginTop="9dp"
+            android:textColor="#BA30189B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/email_black_24dp"
+            android:text="pkmahato910@gmail.com"
+            android:textSize="25dp"
+            android:paddingLeft="33dp"
+            android:drawablePadding="22dp"
+            />
+        <TextView
+
+            android:layout_marginTop="9dp"
+            android:textColor="#BA30189B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/group_add_black_24dp"
+            android:text="add to group"
+            android:textSize="25dp"
+            android:paddingLeft="33dp"
+            android:drawablePadding="22dp"
+            />
+
+    </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
+
