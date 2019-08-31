@@ -41,8 +41,8 @@ public class ViewExpenseActivity extends AppCompatActivity {
     private void init() {
         expenseRV = findViewById(R.id.expenseRV);
         expenses = new ArrayList<>();
-        helper = new ExpenseDatabase(context);
-        adapter = new ExpenseAdapter(expenses, helper, context);
+        helper = new ExpenseDatabase(this);
+        adapter = new ExpenseAdapter(expenses, helper, this);
 
         expenseRV.setLayoutManager(new LinearLayoutManager(this));
         expenseRV.setAdapter(adapter);

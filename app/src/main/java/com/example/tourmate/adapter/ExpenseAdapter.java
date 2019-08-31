@@ -41,9 +41,6 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
         holder.amount.setText(String.valueOf(expense.getAmount()));
         holder.payment.setText(expense.getPayment());
         holder.date.setText(expense.getDate());
-        holder.time.setText(expense.getTime());
-        holder.desc.setText(expense.getDesc());
-        holder.costType.setText(expense.getCostType());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,15 +74,12 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView amount, payment, date, time, desc, costType;
+        private TextView amount, payment, date;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             amount = itemView.findViewById(R.id.amountTV);
             payment = itemView.findViewById(R.id.paymentTypeTV);
             date = itemView.findViewById(R.id.dateTV);
-            time = itemView.findViewById(R.id.timeTV);
-            desc = itemView.findViewById(R.id.descriptionTV);
-            costType = itemView.findViewById(R.id.costTV);
         }
     }
 }

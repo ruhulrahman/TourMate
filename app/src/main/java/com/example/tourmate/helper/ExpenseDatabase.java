@@ -4,8 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class ExpenseDatabase extends Database {
 
@@ -17,6 +21,7 @@ public class ExpenseDatabase extends Database {
     public static String COL_TIME = "Time";
     public static String COL_DESCRIPTION = "Description";
     public static String COL_COST_TYPE = "CostType";
+    public Context contex;
 
     public static String create_table = "create table "+TABLE_NAME+"(Id integer primary key, Amount Text, PaymentType Text, Date Text, Time Text, Description Text, CostType Text)";
 
@@ -60,18 +65,21 @@ public class ExpenseDatabase extends Database {
         contentValues.put(COL_DESCRIPTION, desc);
         contentValues.put(COL_COST_TYPE, cost);
 
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        SQLiteDatabase sqLiteDatabase = null;
+        sqLiteDatabase = this.getWritableDatabase();
         long id = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         sqLiteDatabase.close();
         return id;
     }
 
-
     public Cursor showData(){
         String showAll = "Select * From "+TABLE_NAME;
-        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery(showAll, null);
-        return  cursor;
+        SQLiteDatabase sqLiteDatabase = null;
+
+            sqLiteDatabase = this.getReadableDatabase();
+            Cursor cursor = sqLiteDatabase.rawQuery(showAll, null);
+            return  cursor;
+
     }
 
     public void deleteData(int id){
