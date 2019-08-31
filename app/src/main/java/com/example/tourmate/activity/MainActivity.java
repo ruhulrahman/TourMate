@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new ProfileFragment());
                     return true;
             }
+
             return false;
         }
     };
