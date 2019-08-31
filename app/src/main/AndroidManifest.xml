@@ -9,10 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.DetailsTourActivity"></activity>
+        <activity android:name=".EditExpenseActivity"
+            android:label="Edit Expense"
+            android:theme="@style/ActionBarPomegrane"></activity>
+        <activity android:name=".activity.DetailsTourActivity" />
         <activity android:name=".activity.AddTourActivity" />
-        <activity android:name=".activity.ExpenseDetailsActivity" />
-        <activity android:name=".activity.ViewExpenseActivity" />
+        <activity
+            android:name=".activity.ExpenseDetailsActivity"
+            android:label="View Expense Details"
+            android:theme="@style/ActionBarPomegrane" />
+        <activity
+            android:name=".activity.ViewExpenseActivity"
+            android:label="@string/add_expense"
+            android:theme="@style/ActionBarPomegrane"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -35,7 +44,13 @@
         <activity
             android:name=".activity.AddExpenseActivity"
             android:label="@string/add_expense"
-            android:theme="@style/ActionBarPomegrane" />
+            android:theme="@style/ActionBarPomegrane">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.SignUpActivity"
             android:theme="@style/noActionBar" />
@@ -47,13 +62,7 @@
             android:theme="@style/noActionBar" />
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/noActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/noActionBar" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -66,9 +75,9 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>
