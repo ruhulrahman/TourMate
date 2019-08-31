@@ -4,17 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
-import android.util.Log;
-
-import androidx.annotation.Nullable;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class ExpenseDatabase extends Database {
 
     public static String TABLE_NAME = "expense";
     public static String COL_ID = "Id";
+    public static String TOUR_ID = "TourId";
     public static String COL_AMOUNT = "Amount";
     public static String COL_PAYMENT_TYPE = "PaymentType";
     public static String COL_DATE = "Date";
@@ -23,7 +18,7 @@ public class ExpenseDatabase extends Database {
     public static String COL_COST_TYPE = "CostType";
     public Context contex;
 
-    public static String create_table = "create table "+TABLE_NAME+"(Id integer primary key, Amount Text, PaymentType Text, Date Text, Time Text, Description Text, CostType Text)";
+    public static String create_table = "create table " + TABLE_NAME + "(Id integer primary key,TourId Text, Amount Text, PaymentType Text, Date Text, Time Text, Description Text, CostType Text)";
 
     public ExpenseDatabase(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
@@ -42,8 +37,9 @@ public class ExpenseDatabase extends Database {
 
     }
 
-    public long insertData(Double amount, String payment,String date,String time, String cost){
+    public long insertData(Double amount, String payment, String date, String time, String cost, int tourId) {
         ContentValues contentValues = new ContentValues();
+        contentValues.put(TOUR_ID, tourId);
         contentValues.put(COL_AMOUNT, amount);
         contentValues.put(COL_PAYMENT_TYPE, payment);
         contentValues.put(COL_DATE, date);
@@ -56,9 +52,10 @@ public class ExpenseDatabase extends Database {
         return id;
     }
 
-    public long insertData(Double amount, String payment,String date,String time,String desc,String cost){
+    public long insertData(Double amount, String payment, String date, String time, String desc, String cost, int tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_AMOUNT, amount);
+        contentValues.put(TOUR_ID, tourId);
         contentValues.put(COL_PAYMENT_TYPE, payment);
         contentValues.put(COL_DATE, date);
         contentValues.put(COL_TIME, time);
@@ -72,23 +69,23 @@ public class ExpenseDatabase extends Database {
         return id;
     }
 
-    public Cursor showData(){
-        String showAll = "Select * From "+TABLE_NAME;
+    public Cursor showData() {
+        String showAll = "Select * From " + TABLE_NAME;
         SQLiteDatabase sqLiteDatabase = null;
-
-            sqLiteDatabase = this.getReadableDatabase();
-            Cursor cursor = sqLiteDatabase.rawQuery(showAll, null);
-            return  cursor;
+        sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(showAll, null);
+        return cursor;
 
     }
 
-    public void deleteData(int id){
+    public void deleteData(int id) {
         getReadableDatabase().delete(TABLE_NAME, "Id=?", new String[]{String.valueOf(id)});
     }
 
-    public void updateData(int id, String amount, String payment,String date,String time,String desc,String cost){
+    public long updateData(int id, Double amount, String payment, String date, String time, String desc, String cost, int tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_ID, id);
+        contentValues.put(TOUR_ID, tourId);
         contentValues.put(COL_AMOUNT, amount);
         contentValues.put(COL_PAYMENT_TYPE, payment);
         contentValues.put(COL_DATE, date);
@@ -96,9 +93,28 @@ public class ExpenseDatabase extends Database {
         contentValues.put(COL_DESCRIPTION, desc);
         contentValues.put(COL_COST_TYPE, cost);
 
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        SQLiteDatabase sqLiteDatabase = null;
+        sqLiteDatabase = this.getReadableDatabase();
         sqLiteDatabase.update(TABLE_NAME, contentValues, "Id=?", new String[]{String.valueOf(id)});
         sqLiteDatabase.close();
+        return 0;
+    }
+
+    public long updateData(int id, Double amount, String payment, String date, String time, String cost, int tourId) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_ID, id);
+        contentValues.put(TOUR_ID, tourId);
+        contentValues.put(COL_AMOUNT, amount);
+        contentValues.put(COL_PAYMENT_TYPE, payment);
+        contentValues.put(COL_DATE, date);
+        contentValues.put(COL_TIME, time);
+        contentValues.put(COL_COST_TYPE, cost);
+
+        SQLiteDatabase sqLiteDatabase = null;
+        sqLiteDatabase = this.getReadableDatabase();
+        sqLiteDatabase.update(TABLE_NAME, contentValues, "Id=?", new String[]{String.valueOf(id)});
+        sqLiteDatabase.close();
+        return 0;
     }
 
 }

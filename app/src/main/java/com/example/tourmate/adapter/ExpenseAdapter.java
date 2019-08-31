@@ -46,6 +46,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ExpenseDetailsActivity.class);
+                intent.putExtra("expenseId", String.valueOf(expense.getId()));
                 intent.putExtra("amount", expense.getAmount());
                 intent.putExtra("payment", expense.getPayment());
                 intent.putExtra("date", expense.getDate());

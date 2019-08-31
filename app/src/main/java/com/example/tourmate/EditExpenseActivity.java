@@ -1,4 +1,4 @@
-package com.example.tourmate.activity;
+package com.example.tourmate;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -15,8 +15,11 @@ import android.widget.DatePicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.example.tourmate.R;
-import com.example.tourmate.databinding.ActivityAddExpenseBinding;
+import com.example.tourmate.activity.AddExpenseActivity;
+import com.example.tourmate.activity.ExpenseDetailsActivity;
+import com.example.tourmate.activity.ViewExpenseActivity;
+import com.example.tourmate.adapter.ExpenseAdapter;
+import com.example.tourmate.databinding.ActivityEditExpenseBinding;
 import com.example.tourmate.helper.ExpenseDatabase;
 
 import java.sql.Time;
@@ -25,19 +28,19 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AddExpenseActivity extends AppCompatActivity {
-    private ActivityAddExpenseBinding binding;
+public class EditExpenseActivity extends AppCompatActivity {
+    private ActivityEditExpenseBinding binding;
     private ExpenseDatabase helper;
+    private ExpenseAdapter adapter;
     private Double amount;
-    private String payment, date, time, desc, costType;
-    private boolean result;
-    private int tourId = 1;
-
+    private int id, updatedID, tourId = 1;
+    private String payment, date, time, desc, costType, updateId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_add_expense);
-        helper = new ExpenseDatabase(this);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_expense);
+        init();
+
 
         binding.dateET.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +55,31 @@ public class AddExpenseActivity extends AppCompatActivity {
             }
         });
 
-        expenseDataInsert();
+        updateExpenseData();
+    }
+
+    private void init() {
+        helper = new ExpenseDatabase(this);
+
+
+        if(getIntent().getExtras() != null){
+            updateId = getIntent().getStringExtra("expenseId");
+            updatedID = Integer.parseInt(updateId);
+
+            amount = getIntent().getDoubleExtra("amount",0);
+            payment = getIntent().getStringExtra("payment");
+            date = getIntent().getStringExtra("date");
+            time = getIntent().getStringExtra("time");
+            desc = getIntent().getStringExtra("desc");
+            costType = getIntent().getStringExtra("costType");
+
+            binding.addAMountET.setText(String.valueOf(amount));
+            //binding.paymentSpinner.setSelected(String.valueOf(payment));
+            binding.dateET.setText(date);
+            binding.timeET.setText(time);
+            binding.descriptionET.setText(desc);
+
+        }
     }
 
     private void openDatePicker() {
@@ -105,8 +132,8 @@ public class AddExpenseActivity extends AppCompatActivity {
     }
 
 
-    private void expenseDataInsert() {
-        result = false;
+
+    private void updateExpenseData() {
         binding.saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,47 +145,26 @@ public class AddExpenseActivity extends AppCompatActivity {
                 costType = binding.costSpinner.getSelectedItem().toString();
 
                 if(amount.equals("")){
-                    Toast.makeText(AddExpenseActivity.this, "Please enter amount", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditExpenseActivity.this, "Please enter amount", Toast.LENGTH_SHORT).show();
                 }else if(date.equals("")){
-                    Toast.makeText(AddExpenseActivity.this, "Please pickup date", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditExpenseActivity.this, "Please pickup date", Toast.LENGTH_SHORT).show();
                 }else if(time.equals("")){
-                    Toast.makeText(AddExpenseActivity.this, "Please pickup time", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditExpenseActivity.this, "Please pickup time", Toast.LENGTH_SHORT).show();
                 }else{
                     if (desc.equals("")){
-                        long id = helper.insertData(amount, payment, date, time, costType, tourId);
-                        result = true;
-                        if(result == true){
-                            binding.addAMountET.setText("");
-                            binding.dateET.setText("");
-                            binding.timeET.setText("");
-                            binding.descriptionET.setText("");
-                            binding.paymentSpinner.setSelection(0);
-                            binding.costSpinner.setSelection(0);
-                        }
-                        Toast.makeText(AddExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddExpenseActivity.this, ViewExpenseActivity.class));
+                        long id = helper.updateData(updatedID, amount, payment, date, time, costType, tourId);
+                        Toast.makeText(EditExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditExpenseActivity.this, ExpenseDetailsActivity.class));
                     }else{
-                        long id = helper.insertData(amount, payment, date, time, desc, costType, tourId);
-                        result = true;
-                        if(result == true){
-                            binding.addAMountET.setText("");
-                            binding.dateET.setText("");
-                            binding.timeET.setText("");
-                            binding.descriptionET.setText("");
-                            binding.paymentSpinner.setSelection(0);
-                            binding.costSpinner.setSelection(0);
-                        }
-                        Toast.makeText(AddExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddExpenseActivity.this, ViewExpenseActivity.class));
+                        long id = helper.updateData(updatedID, amount, payment, date, time, desc, costType, tourId);
+                        Toast.makeText(EditExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditExpenseActivity.this, ExpenseDetailsActivity.class));
                     }
-
-
-
                 }
-
-
             }
         });
     }
+
+
 
 }
