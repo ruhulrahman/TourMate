@@ -29,7 +29,6 @@ import java.util.Date;
 public class EditExpenseActivity extends AppCompatActivity {
     private ActivityEditExpenseBinding binding;
     private ExpenseDatabase helper;
-    private ExpenseAdapter adapter;
     private Double amount;
     private int id, updatedID;
     private String payment, date, time, desc, costType, updateId, tourId;
