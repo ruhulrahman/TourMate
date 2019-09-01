@@ -29,10 +29,9 @@ import java.util.Date;
 public class EditExpenseActivity extends AppCompatActivity {
     private ActivityEditExpenseBinding binding;
     private ExpenseDatabase helper;
-    private ExpenseAdapter adapter;
     private Double amount;
-    private int id, updatedID, tourId;
-    private String payment, date, time, desc, costType, updateId;
+    private int id, updatedID;
+    private String payment, date, time, desc, costType, updateId, tourId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,16 +43,16 @@ public class EditExpenseActivity extends AppCompatActivity {
         if(getIntent().getExtras() != null){
             //updateId = getIntent().getStringExtra("expenseId");
             updatedID = Integer.parseInt(getIntent().getStringExtra("expenseId"));
-
             amount = getIntent().getDoubleExtra("amount",0);
             payment = getIntent().getStringExtra("payment");
             date = getIntent().getStringExtra("date");
             time = getIntent().getStringExtra("time");
             desc = getIntent().getStringExtra("desc");
             costType = getIntent().getStringExtra("costType");
-            tourId = getIntent().getIntExtra("tourId", 0);
+            tourId = getIntent().getStringExtra("tourId");
 
             binding.addAMountET.setText(String.valueOf(amount));
+            binding.paymentSpinner.setSelection(0);
             //binding.paymentSpinner.setSelected(String.valueOf(payment));
             binding.dateET.setText(date);
             binding.timeET.setText(time);
@@ -89,7 +88,7 @@ public class EditExpenseActivity extends AppCompatActivity {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month +1;
                 String currentDate = year+"/"+month+"/"+dayOfMonth+" 00:00:00";
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
                 Date date = new Date();
                 try {
                     date = simpleDateFormat.parse(currentDate);
@@ -154,12 +153,12 @@ public class EditExpenseActivity extends AppCompatActivity {
                 }else{
                     if (desc.equals("")){
                         long id = helper.updateData(updatedID, amount, payment, date, time, costType, tourId);
-                        Toast.makeText(EditExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(EditExpenseActivity.this, ExpenseDetailsActivity.class));
+                        Toast.makeText(EditExpenseActivity.this, "Data updated"+id, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditExpenseActivity.this, ViewExpenseActivity.class));
                     }else{
                         long id = helper.updateData(updatedID, amount, payment, date, time, desc, costType, tourId);
-                        Toast.makeText(EditExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(EditExpenseActivity.this, ExpenseDetailsActivity.class));
+                        Toast.makeText(EditExpenseActivity.this, "Data updated"+id, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditExpenseActivity.this, ViewExpenseActivity.class));
                     }
                 }
             }
