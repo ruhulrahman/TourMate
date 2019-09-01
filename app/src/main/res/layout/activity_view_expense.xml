@@ -18,6 +18,8 @@
         app:fabSize="auto"/>
 
     <TextView
+        android:gravity="right"
+        android:padding="10dp"
         android:id="@+id/totalAmountTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

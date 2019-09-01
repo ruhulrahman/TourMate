@@ -38,7 +38,7 @@ public class ViewExpenseActivity extends AppCompatActivity {
 
         init();
         getData();
-        totalAmountTV.setText(String.valueOf(totalAmount));
+        totalAmountTV.setText("Total Expense: "+String.valueOf(totalAmount));
     }
 
     private void init() {
