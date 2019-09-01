@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ExpenseDetailsActivity"></activity>
+        <activity android:name=".activity.AddTourActivity">
+        </activity>
+        <activity android:name=".activity.ExpenseDetailsActivity" />
         <activity android:name=".activity.ViewExpenseActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -36,21 +38,25 @@
             android:theme="@style/ActionBarPomegrane" />
         <activity
             android:name=".activity.SignUpActivity"
-            android:theme="@style/noActionBar" />
+            android:theme="@style/noActionBar" >
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/noActionBar" />
+            android:theme="@style/noActionBar">
+
+        </activity>
         <activity
             android:name=".activity.SpashActivity"
             android:theme="@style/noActionBar" />
         <activity
             android:name=".activity.MainActivity"
             android:theme="@style/noActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
@@ -64,9 +70,9 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>
