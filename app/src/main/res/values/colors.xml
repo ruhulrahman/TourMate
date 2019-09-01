@@ -35,4 +35,8 @@
     <color name="blackLight">#5C5C5C</color>
     <color name="white">#FFFFFF</color>
     <color name="colorPrimaryDarkTop">#B44902</color>
+    <color name="colorPrimaryDarkmid">#292b3d</color>
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
 </resources>
