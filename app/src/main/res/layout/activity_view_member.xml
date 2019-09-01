@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.tour.AddTourActivity">
+    tools:context=".activity.member.ViewMemberActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,71 +4,73 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp"
-        android:layout_height="match_parent"
-        tools:context=".activity.expense.AddExpenseActivity">
+        tools:context=".activity.profile.EditProfileActivity">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/blackLight"
+            android:onClick="back"
+            android:src="@drawable/ic_keyboard_backspace_black_24dp"
+            android:tint="@color/white"
+            app:fabSize="auto"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/addAMount_text_input_layout"
+            android:id="@+id/name_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/addAMountET"
+                android:id="@+id/nameET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:ems="10"
-                android:inputType="number"
-                android:hint="Add Amount" />
+                android:inputType="text"
+                android:hint="Name" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/paymentSpinner"
-            android:paddingBottom="15dp"
-            android:paddingTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/payment_arrays"
-            android:prompt="@string/payment_prompt"/>
-
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/date_text_input_layout"
+            android:id="@+id/email_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-                android:id="@+id/dateET"
+                android:id="@+id/emailET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:inputType="date"
-                android:hint="Date" />
+                android:inputType="textEmailAddress"
+                android:hint="Email" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/time_text_input_layout"
+            android:id="@+id/phone_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-                android:id="@+id/timeET"
+                android:id="@+id/phoneET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:inputType="datetime"
-                android:hint="Time" />
+                android:inputType="phone"
+                android:hint="Phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/description_text_input_layout"
+            android:id="@+id/address_layout"
             android:layout_width="match_parent"
             android:layout_height="100dp">
             <EditText
-                android:id="@+id/descriptionET"
+                android:id="@+id/addressET"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
@@ -76,22 +78,13 @@
                 android:maxLines="3"
                 android:ems="10"
                 android:inputType="textMultiLine"
-                android:hint="Description (Optional)" />
+                android:hint="Address" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <Spinner
-            android:id="@+id/costSpinner"
-            android:paddingBottom="15dp"
-            android:paddingTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/cost_arrays"
-            android:prompt="@string/cost_prompt"/>
 
         <Button
             android:id="@+id/saveBtn"
             android:layout_marginTop="20dp"
-            android:text="Save"
+            android:text="Update Profile"
             android:textColor="@android:color/white"
             android:textAllCaps="false"
             android:padding="15dp"
