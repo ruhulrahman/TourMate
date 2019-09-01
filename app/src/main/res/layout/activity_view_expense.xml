@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.ViewExpenseActivity">
+    tools:context=".activity.expense.ViewExpenseActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backButton"
@@ -20,7 +20,7 @@
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/expenseViewRV"
+        android:id="@+id/expenseRV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

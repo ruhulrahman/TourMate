@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.tourmate.R;
-import com.example.tourmate.activity.AddExpenseActivity;
 
 public class SignUpActivity extends AppCompatActivity {
 
