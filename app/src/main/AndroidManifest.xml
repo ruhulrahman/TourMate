@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tourmate">
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,9 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.expense.EditExpenseActivity"
+        <activity android:name=".activity.member.ViewMemberDetailsActivity"></activity>
+        <activity android:name=".activity.member.EditMemberActivity" />
+        <activity android:name=".activity.member.ViewMemberActivity" />
+        <activity android:name=".activity.member.AddMemberActivity" />
+        <activity android:name=".activity.profile.EditProfileActivity" />
+        <activity
+            android:name=".activity.expense.EditExpenseActivity"
             android:label="Edit Expense"
-            android:theme="@style/ActionBarPomegrane"></activity>
+            android:theme="@style/ActionBarPomegrane" />
         <activity android:name=".activity.tour.DetailsTourActivity" />
         <activity android:name=".activity.tour.AddTourActivity" />
         <activity
@@ -25,7 +27,7 @@
         <activity
             android:name=".activity.expense.ViewExpenseActivity"
             android:label="@string/add_expense"
-            android:theme="@style/ActionBarPomegrane"></activity>
+            android:theme="@style/ActionBarPomegrane" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -74,8 +76,6 @@
             </intent-filter>
         </activity>
 
-
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC9DZV98bXVgZEYmV1VJyBMh_mOy7PnLDE" />
@@ -87,7 +87,10 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>
