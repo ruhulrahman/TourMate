@@ -14,6 +14,7 @@ import com.example.tourmate.fragment.NearbyFragment;
 import com.example.tourmate.fragment.ProfileFragment;
 import com.example.tourmate.fragment.TripFragment;
 import com.example.tourmate.fragment.WalletFragment;
+import com.example.tourmate.fragment.WeatherFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.trip:
                     replaceFragment(new TripFragment());
                     return true;
-                case R.id.memories:
-                    replaceFragment(new MemoriesFragment());
+                case R.id.weather:
+                    replaceFragment(new WeatherFragment());
                     return true;
                 case R.id.nearByMap:
                     replaceFragment(new NearbyFragment());
