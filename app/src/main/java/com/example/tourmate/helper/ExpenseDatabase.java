@@ -90,7 +90,7 @@ public class ExpenseDatabase extends Database {
         getReadableDatabase().delete(TABLE_NAME, "Id=?", new String[]{String.valueOf(id)});
     }
 
-    public long updateData(int id, Double amount, String payment, String date, String time, String desc, String cost, int tourId) {
+    public long updateData(int id, Double amount, String payment, String date, String time, String desc, String cost, String tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_ID, id);
         contentValues.put(COL_AMOUNT, amount);
@@ -108,7 +108,7 @@ public class ExpenseDatabase extends Database {
         return 0;
     }
 
-    public long updateData(int id, Double amount, String payment, String date, String time, String cost, int tourId) {
+    public long updateData(int id, Double amount, String payment, String date, String time, String cost, String tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_ID, id);
         contentValues.put(COL_AMOUNT, amount);

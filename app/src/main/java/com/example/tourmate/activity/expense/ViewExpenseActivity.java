@@ -26,8 +26,7 @@ public class ViewExpenseActivity extends AppCompatActivity {
 
     private int id;
     private Double amount;
-    private String payment, date, time, desc, costType;
-    private int tourId;
+    private String payment, date, time, desc, costType, tourId;
 
 
     @Override
@@ -57,9 +56,9 @@ public class ViewExpenseActivity extends AppCompatActivity {
             payment = cursor.getString(cursor.getColumnIndex(helper.COL_PAYMENT_TYPE));
             date = cursor.getString(cursor.getColumnIndex(helper.COL_DATE));
             time = cursor.getString(cursor.getColumnIndex(helper.COL_TIME));
-            desc = cursor.getString(cursor.getColumnIndex(helper.COL_TIME));
+            desc = cursor.getString(cursor.getColumnIndex(helper.COL_DESCRIPTION));
             costType = cursor.getString(cursor.getColumnIndex(helper.COL_COST_TYPE));
-            tourId = cursor.getInt(cursor.getColumnIndex(helper.COL_TOUR_ID));
+            tourId = cursor.getString(cursor.getColumnIndex(helper.COL_TOUR_ID));
             expenses.add(new Expense(id, amount, payment, date, time, desc, costType, tourId));
             adapter.notifyDataSetChanged();
         }

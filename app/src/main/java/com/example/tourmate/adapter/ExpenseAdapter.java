@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +22,7 @@ import java.util.List;
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHolder> {
     private List<Expense> expenses;
     private ExpenseDatabase helper;
+    private boolean result=false;
     private Context context;
 
     public ExpenseAdapter(List<Expense> expenses, ExpenseDatabase helper, Context context) {
@@ -53,19 +56,23 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
                 intent.putExtra("time", expense.getTime());
                 intent.putExtra("desc", expense.getDesc());
                 intent.putExtra("costType", expense.getCostType());
-                intent.putExtra("tourId", expense.getTourId());
+                intent.putExtra("tourId", String.valueOf(expense.getTourId()));
                 context.startActivity(intent);
             }
         });
 
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public boolean onLongClick(View view) {
+            public void onClick(View view) {
                 helper = new ExpenseDatabase(context);
                 helper.deleteData(expense.getId());
                 expenses.remove(position);
                 notifyDataSetChanged();
-                return false;
+                result = true;
+                if(result == true){
+                    Toast.makeText(context, "Data Deleted", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -77,11 +84,13 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView amount, payment, date;
+        private Button deleteBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             amount = itemView.findViewById(R.id.amountTV);
             payment = itemView.findViewById(R.id.paymentTypeTV);
             date = itemView.findViewById(R.id.dateTV);
+            deleteBtn = itemView.findViewById(R.id.deleteBtn);
         }
     }
 }

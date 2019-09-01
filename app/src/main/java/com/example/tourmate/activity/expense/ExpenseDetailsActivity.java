@@ -18,7 +18,8 @@ public class ExpenseDetailsActivity extends AppCompatActivity {
     private Button editExpenseBtn;
     private TextView amountTV, paymentTypeTV, dateTV, timeTV, descriptionTV, costTV;
     private Double amount;
-    private String payment, date, time, desc, costType;
+    private int expenseId;
+    private String payment, date, time, desc, costType, tourId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +27,15 @@ public class ExpenseDetailsActivity extends AppCompatActivity {
 
         init();
 
-        if(getIntent().getExtras() != null){
+       if(getIntent().getExtras() != null){
+            expenseId = Integer.parseInt(getIntent().getStringExtra("expenseId"));
             amount = getIntent().getDoubleExtra("amount",0);
             payment = getIntent().getStringExtra("payment");
             date = getIntent().getStringExtra("date");
             time = getIntent().getStringExtra("time");
             desc = getIntent().getStringExtra("desc");
             costType = getIntent().getStringExtra("costType");
+            tourId = getIntent().getStringExtra("tourId");
 
             amountTV.setText("Cost: "+String.valueOf(amount));
             paymentTypeTV.setText("payment Type: "+payment);
@@ -40,12 +43,20 @@ public class ExpenseDetailsActivity extends AppCompatActivity {
             timeTV.setText("Time: "+time);
             descriptionTV.setText("Description: "+desc);
             costTV.setText("Cost Type: "+costType);
-        }
+       }
 
         editExpenseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ExpenseDetailsActivity.this, EditExpenseActivity.class);
+                intent.putExtra("expenseId",String.valueOf(expenseId));
+                intent.putExtra("amount",amount);
+                intent.putExtra("payment",payment);
+                intent.putExtra("date",date);
+                intent.putExtra("time",time);
+                intent.putExtra("desc",desc);
+                intent.putExtra("costType",costType);
+                intent.putExtra("tourId",tourId);
                 startActivity(intent);
             }
         });
