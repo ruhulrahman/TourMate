@@ -19,6 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SignUpActivity extends AppCompatActivity {
     private EditText nameEt,emailEt,passwordEt;
     private String name,email,password;
@@ -34,6 +37,11 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         init();
+
+        if(firebaseAuth.getCurrentUser()!=null){
+            startActivity(new Intent(SignUpActivity.this,MainActivity.class));
+            finish();
+        }
 
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
@@ -55,13 +63,30 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
-    private void signUpRegister(String name, String email, String password) {
+    private void signUpRegister(final String name, final String email, String password) {
 
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(SignUpActivity.this,"Success",Toast.LENGTH_SHORT).show();
+                    String userId = firebaseAuth.getCurrentUser().getUid();
+                    Map<String,Object> userMap = new HashMap<>();
+
+                    userMap.put("name",name);
+                    userMap.put("email",email);
+
+                    DatabaseReference userRef = databaseReference.child("users").child(userId).child("userInfo");
+                    userRef.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(SignUpActivity.this,"Success",Toast.LENGTH_SHORT).show();
+
+                                startActivity(new Intent(SignUpActivity.this,MainActivity.class));
+                                finish();
+                            }
+                        }
+                    });
 
                 }
             }
