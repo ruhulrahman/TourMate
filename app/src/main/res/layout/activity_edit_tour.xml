@@ -1,99 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".activity.tour.EditTourActivity">
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tourTitle_layout"
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/tourTitleET"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".activity.tour.EditTourActivity">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tourTitle_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Tour Title" />
+            android:layout_height="wrap_content">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/tourTitleET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Tour Title" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tourLocation_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/tourLocationET"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tourLocation_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Tour Location" />
+            android:layout_height="wrap_content">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/tourLocationET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Tour Location" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/startDate_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/startDateET"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/startDate_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:inputType="date"
-            android:hint="Start Date" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/startDateET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:inputType="date"
+                android:hint="Start Date" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/endDate_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/endDateET"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/endDate_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:inputType="date"
-            android:hint="End Date" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/endDateET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:inputType="date"
+                android:hint="End Date" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tourDesc_layout"
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
-        <EditText
-            android:id="@+id/tourDescET"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tourDesc_layout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:maxLines="4"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:hint="Description (Optional)" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="100dp">
+            <EditText
+                android:id="@+id/tourDescET"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:maxLines="4"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:hint="Description (Optional)" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/AddTourBtn"
-        android:layout_marginTop="20dp"
-        android:text="Update Tour"
-        android:textColor="@android:color/white"
-        android:textAllCaps="false"
-        android:padding="15dp"
-        android:background="@drawable/buttonshape"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        <Button
+            android:id="@+id/updateTourBtn"
+            android:layout_marginTop="20dp"
+            android:text="Update Tour"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:padding="15dp"
+            android:background="@drawable/buttonshape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</layout>

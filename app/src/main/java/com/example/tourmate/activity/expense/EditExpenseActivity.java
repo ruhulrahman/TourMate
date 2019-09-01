@@ -16,7 +16,6 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.tourmate.R;
-import com.example.tourmate.adapter.ExpenseAdapter;
 import com.example.tourmate.databinding.ActivityEditExpenseBinding;
 import com.example.tourmate.helper.ExpenseDatabase;
 
@@ -36,8 +35,9 @@ public class EditExpenseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_expense);
-        init();
 
+
+        helper = new ExpenseDatabase(this);
 
 
         if(getIntent().getExtras() != null){
@@ -77,10 +77,6 @@ public class EditExpenseActivity extends AppCompatActivity {
         updateExpenseData();
     }
 
-    private void init() {
-        helper = new ExpenseDatabase(this);
-
-    }
 
     private void openDatePicker() {
         DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {

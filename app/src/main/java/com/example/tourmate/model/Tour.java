@@ -2,18 +2,19 @@ package com.example.tourmate.model;
 
 public class Tour {
     private int id;
-    private String tourTitle, TourDate, TourLocation, TourDesc;
+    private String tourTitle,tourLocation, startDate, endDate, tourDesc;
 
     public Tour() {
 
     }
 
-    public Tour(int id, String tourTitle, String tourDate, String tourLocation, String tourDesc) {
+    public Tour(int id, String tourTitle, String tourLocation, String startDate, String endDate, String tourDesc) {
         this.id = id;
         this.tourTitle = tourTitle;
-        TourDate = tourDate;
-        TourLocation = tourLocation;
-        TourDesc = tourDesc;
+        this.tourLocation = tourLocation;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.tourDesc = tourDesc;
     }
 
     public int getId() {
@@ -24,15 +25,19 @@ public class Tour {
         return tourTitle;
     }
 
-    public String getTourDate() {
-        return TourDate;
+    public String getTourLocation() {
+        return tourLocation;
     }
 
-    public String getTourLocation() {
-        return TourLocation;
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
     }
 
     public String getTourDesc() {
-        return TourDesc;
+        return tourDesc;
     }
 }
