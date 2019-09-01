@@ -1,113 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:padding="10dp"
         tools:context=".activity.expense.EditExpenseActivity">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/blackLight"
-            android:onClick="back"
-            android:src="@drawable/ic_keyboard_backspace_black_24dp"
-            android:tint="@color/white"
-            app:fabSize="auto"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/addAMount_text_input_layout"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/blackLight"
+                android:onClick="back"
+                android:src="@drawable/ic_keyboard_backspace_black_24dp"
+                android:tint="@color/white"
+                app:fabSize="auto"/>
 
-            <EditText
-                android:id="@+id/addAMountET"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addAMount_text_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/addAMountET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="Add Amount" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/paymentSpinner"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:ems="10"
-                android:inputType="number"
-                android:hint="Add Amount" />
+                android:entries="@array/payment_arrays"
+                android:prompt="@string/payment_prompt"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/date_text_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/dateET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:inputType="date"
+                    android:hint="Date" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/paymentSpinner"
-            android:paddingBottom="15dp"
-            android:paddingTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/payment_arrays"
-            android:prompt="@string/payment_prompt"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/time_text_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/timeET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:inputType="datetime"
+                    android:hint="Time" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/date_text_input_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/dateET"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/description_text_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+                <EditText
+                    android:id="@+id/descriptionET"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:maxLines="3"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:hint="Description (Optional)" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/costSpinner"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:inputType="date"
-                android:hint="Date" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:entries="@array/cost_arrays"
+                android:prompt="@string/cost_prompt"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/time_text_input_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/timeET"
+            <Button
+                android:id="@+id/updateExpenseBtn"
+                android:layout_marginTop="20dp"
+                android:text="Update Expense"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:padding="15dp"
+                android:background="@drawable/buttonshape"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:inputType="datetime"
-                android:hint="Time" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/description_text_input_layout"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-            <EditText
-                android:id="@+id/descriptionET"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:maxLines="3"
-                android:ems="10"
-                android:inputType="textMultiLine"
-                android:hint="Description (Optional)" />
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/costSpinner"
-            android:paddingBottom="15dp"
-            android:paddingTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/cost_arrays"
-            android:prompt="@string/cost_prompt"/>
-
-        <Button
-            android:id="@+id/updateExpenseBtn"
-            android:layout_marginTop="20dp"
-            android:text="Update Expense"
-            android:textColor="@android:color/white"
-            android:textAllCaps="false"
-            android:padding="15dp"
-            android:background="@drawable/buttonshape"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+    </ScrollView>
 </layout>

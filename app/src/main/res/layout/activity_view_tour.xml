@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.expense.ViewExpenseActivity">
+    android:padding="10dp"
+    tools:context=".activity.tour.ViewTourActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backButton"
@@ -18,21 +19,11 @@
         android:tint="@color/white"
         app:fabSize="auto"/>
 
-    <TextView
-        android:gravity="right"
-        android:padding="10dp"
-        android:id="@+id/totalAmountTV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Total Expense"
-        android:textColor="@color/red"
-        android:textSize="25sp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/expenseRV"
+        android:id="@+id/tourRV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </androidx.recyclerview.widget.RecyclerView>
-
 </LinearLayout>

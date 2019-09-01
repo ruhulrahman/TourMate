@@ -7,12 +7,12 @@ import android.view.View;
 
 import com.example.tourmate.R;
 
-public class DetailsTourActivity extends AppCompatActivity {
+public class ViewTourActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details_tour);
+        setContentView(R.layout.activity_view_tour);
     }
 
     public void back(View view) {
