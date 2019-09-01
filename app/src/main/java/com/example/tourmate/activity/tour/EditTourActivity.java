@@ -1,6 +1,7 @@
 package com.example.tourmate.activity.tour;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -21,13 +22,13 @@ import java.util.Date;
 public class EditTourActivity extends AppCompatActivity {
     private ActivityEditTourBinding binding;
     private TourDatabase helper;
-    private int tourId, updatedID;
+    private int tourId;
 
     private String tourTitle,tourLocation, startDate, endDate, tourDesc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_tour);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_tour);
 
         helper = new TourDatabase(this);
 

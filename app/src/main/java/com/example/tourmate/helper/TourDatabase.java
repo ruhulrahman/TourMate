@@ -44,7 +44,8 @@ public class TourDatabase extends Database {
         contentValues.put(COL_END_DATE, EndDate);
         contentValues.put(COL_TOUR_DESC, TourDesc);
 
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        SQLiteDatabase sqLiteDatabase = null;
+        sqLiteDatabase = this.getReadableDatabase();
         long id = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         sqLiteDatabase.close();
         return id;

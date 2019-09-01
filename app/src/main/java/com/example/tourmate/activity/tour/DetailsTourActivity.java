@@ -34,11 +34,11 @@ public class DetailsTourActivity extends AppCompatActivity {
             endDate = getIntent().getStringExtra("endDate");
             tourDesc = getIntent().getStringExtra("tourDesc");
 
-            tourTitleTV.setText("payment Type: "+tourTitle);
-            tourLocationTV.setText("Date: "+tourLocation);
-            startDateTV.setText("Time: "+startDate);
-            endDateTV.setText("Description: "+endDate);
-            tourDescTV.setText("Cost Type: "+tourDesc);
+            tourTitleTV.setText("Tour Title: "+tourTitle);
+            tourLocationTV.setText("Tour Location: "+tourLocation);
+            startDateTV.setText("Tour Start Date: "+startDate);
+            endDateTV.setText("Tour Start Date: "+endDate);
+            tourDescTV.setText("Tour Description: "+tourDesc);
         }
 
         editTourBtn.setOnClickListener(new View.OnClickListener() {

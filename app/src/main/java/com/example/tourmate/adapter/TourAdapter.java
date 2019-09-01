@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tourmate.R;
 import com.example.tourmate.activity.expense.ExpenseDetailsActivity;
+import com.example.tourmate.activity.tour.DetailsTourActivity;
 import com.example.tourmate.helper.ExpenseDatabase;
 import com.example.tourmate.helper.TourDatabase;
 import com.example.tourmate.model.Expense;
@@ -43,13 +44,13 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final Tour tour = tours.get(position);
-        holder.tourTitleTV.setText(String.valueOf(tour.getTourTitle()));
+        holder.tourTitleTV.setText(tour.getTourTitle());
         holder.tourLocationTV.setText(tour.getTourLocation());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ExpenseDetailsActivity.class);
+                Intent intent = new Intent(context, DetailsTourActivity.class);
                 intent.putExtra("tourId", String.valueOf(tour.getId()));
                 intent.putExtra("tourTitle", tour.getTourTitle());
                 intent.putExtra("tourLocation", tour.getTourLocation());
