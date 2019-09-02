@@ -9,9 +9,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.example.tourmate.R;
 
+import com.example.tourmate.databinding.ActivitySignUpBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -20,31 +22,37 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class SignUpActivity extends AppCompatActivity {
-    private EditText nameEt,emailEt,passwordEt;
     private String name,email,password;
-    private Button signUpBtn;
+    private ActivitySignUpBinding binding;
+
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up);
 
-        init();
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
+        if (firebaseAuth.getCurrentUser()!=null){
+            startActivity(new Intent(SignUpActivity.this,MainActivity.class));
+            finish();
+        }
 
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
+        binding.signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                name = nameEt.getText().toString();
-                email = emailEt.getText().toString();
-                password = passwordEt.getText().toString();
+                name = binding.nameEt.getText().toString();
+                email = binding.emailEt.getText().toString();
+                password = binding.passwordEt.getText().toString();
 
                 signUpRegister(name,email,password);
             }
@@ -57,36 +65,39 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
-    private void signUpRegister(String name, String email, String password) {
+    private void signUpRegister(final String name, final String email, String password) {
 
-        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(SignUpActivity.this,"Success",Toast.LENGTH_SHORT).show();
+                if (task.isSuccessful()) {
+
+                    String userId = firebaseAuth.getCurrentUser().getUid();
+                    Map<String, Object> userMap = new HashMap<>();
+                    userMap.put("name", name);
+                    userMap.put("email", email);
+
+                    DatabaseReference userRef = databaseReference.child("users").child(userId);
+                    userRef.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(SignUpActivity.this, "SignUp successful", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(SignUpActivity.this,MainActivity.class));
+                                finish();
+                            }
+                        }
+                    });
 
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignUpActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(SignUpActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-
-
-    private void init() {
-        nameEt = findViewById(R.id.nameEtId);
-        emailEt = findViewById(R.id.emailEtId);
-        passwordEt = findViewById(R.id.passwordEtId);
-        signUpBtn = findViewById(R.id.signUpBtnId);
-        firebaseAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-    }
-
-
-
 
 }

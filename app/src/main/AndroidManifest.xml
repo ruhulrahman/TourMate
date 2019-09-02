@@ -36,11 +36,8 @@
         <activity android:name=".activity.tour.AddTourActivity"
             android:label="Add Tour"
             android:theme="@style/ActionBarPomegrane" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
+        </activity>
         <activity
             android:name=".activity.expense.ExpenseDetailsActivity"
             android:label="View Expense Details"
@@ -69,16 +66,16 @@
         <activity
             android:name=".activity.SignUpActivity"
             android:theme="@style/noActionBar">
-
-        </activity>
-        <activity
-            android:name=".activity.LoginActivity"
-            android:theme="@style/noActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/noActionBar">
+
         </activity>
         <activity
             android:name=".activity.SpashActivity"
