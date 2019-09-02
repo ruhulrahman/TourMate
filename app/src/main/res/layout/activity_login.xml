@@ -20,21 +20,23 @@
             android:background="@android:color/white"
             android:padding="10dp"
             android:shadowColor="@android:color/background_dark"
-            android:text="Login Panel"
+            android:text="Login"
             android:textColor="@color/blackLight"
             android:textSize="30dp"
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/loginEmailEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@android:color/white"
             android:drawableLeft="@drawable/ic_person_black_24dp"
-            android:hint="Name"
+            android:hint="Email"
             android:padding="15dp" />
 
         <EditText
+            android:id="@+id/loginPasswordEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -44,6 +46,7 @@
             android:padding="15dp" />
 
         <Button
+            android:id="@+id/loginBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout>
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
-        tools:context=".activity.tour.AddTourActivity">
+        tools:context=".activity.tour.EditTourActivity">
 
         <LinearLayout
             android:orientation="vertical"
@@ -91,9 +90,9 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/AddTourBtn"
+                android:id="@+id/updateTourBtn"
                 android:layout_marginTop="20dp"
-                android:text="Add Tour"
+                android:text="Update Tour"
                 android:textColor="@android:color/white"
                 android:textAllCaps="false"
                 android:padding="15dp"
@@ -102,8 +101,5 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
-
     </ScrollView>
 </layout>
-
-

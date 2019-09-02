@@ -1,14 +1,14 @@
 package com.example.tourmate.model;
 
-public class User {
+public class Member {
     private int id;
     private String name, email, phone, password, address, image;
 
-    public User() {
+    public Member() {
 
     }
 
-    public User(int id, String name, String email, String phone, String password, String address, String image) {
+    public Member(int id, String name, String email, String phone, String password, String address, String image) {
         this.id = id;
         this.name = name;
         this.email = email;

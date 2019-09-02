@@ -9,16 +9,17 @@
     <RelativeLayout
         android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/profile_image"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/provat"
+            android:src="@drawable/ic_person_black_24dp"
             app:civ_border_width="2dp"
             app:civ_border_color="#FFF"/>
 
@@ -37,7 +38,7 @@
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
-            android:textSize="36dp"/>
+            android:textSize="26dp"/>
 
         <TextView
 
@@ -47,7 +48,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_phone_black_24dp"
             android:text="+8801770680326"
-            android:textSize="25dp"
+            android:textSize="16sp"
             android:paddingLeft="33dp"
             android:drawablePadding="22dp"/>
         <TextView
@@ -58,7 +59,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/email_black_24dp"
             android:text="pkmahato910@gmail.com"
-            android:textSize="25dp"
+            android:textSize="16sp"
             android:paddingLeft="33dp"
             android:drawablePadding="22dp"/>
         <TextView
@@ -69,7 +70,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/group_add_black_24dp"
             android:text="add to group"
-            android:textSize="25dp"
+            android:textSize="16sp"
             android:paddingLeft="33dp"
             android:drawablePadding="22dp"/>
 

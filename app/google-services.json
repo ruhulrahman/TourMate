@@ -82,20 +82,49 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1025489514152:android:3f8338ad9b6afbf8",
+        "mobilesdk_app_id": "1:1025489514152:android:72e331a11383dbd7",
         "android_client_info": {
-          "package_name": "com.example.tourmate.activity"
+          "package_name": "com.example.pushnotification"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1025489514152-0odopcihmu48hte22vmosnoupk62jtfu.apps.googleusercontent.com",
+          "client_id": "1025489514152-v5f0uu6r9a67hpj2tgbvqcucm2997sh2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.tourmate.activity",
-            "certificate_hash": "924bd6fae45a1b108125b255348d7ac162f5c22a"
+            "package_name": "com.example.pushnotification",
+            "certificate_hash": "13681778efd46432a8b038fd8c266b7a8083f49a"
           }
         },
+        {
+          "client_id": "1025489514152-p1ckciu7sn6a0bvp2catjn8for82v1h3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5fZ3odWD41fg0XOUzvOrKEpKf88j5nUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025489514152-p1ckciu7sn6a0bvp2catjn8for82v1h3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025489514152:android:363d514c84da246d",
+        "android_client_info": {
+          "package_name": "com.example.tourmate"
+        }
+      },
+      "oauth_client": [
         {
           "client_id": "1025489514152-p1ckciu7sn6a0bvp2catjn8for82v1h3.apps.googleusercontent.com",
           "client_type": 3
