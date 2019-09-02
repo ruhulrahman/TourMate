@@ -66,11 +66,7 @@
         <activity
             android:name=".activity.SignUpActivity"
             android:theme="@style/noActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.LoginActivity"
@@ -82,7 +78,13 @@
             android:theme="@style/noActionBar" />
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/noActionBar" />
+            android:theme="@style/noActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
