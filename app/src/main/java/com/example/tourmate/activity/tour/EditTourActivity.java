@@ -12,8 +12,7 @@ import android.widget.Toast;
 
 import com.example.tourmate.R;
 import com.example.tourmate.activity.MainActivity;
-import com.example.tourmate.databinding.ActivityAddTourBinding;
-import com.example.tourmate.fragment.TripFragment;
+import com.example.tourmate.databinding.ActivityEditTourBinding;
 import com.example.tourmate.helper.TourDatabase;
 
 import java.text.ParseException;
@@ -21,18 +20,34 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AddTourActivity extends AppCompatActivity {
-    private ActivityAddTourBinding binding;
+public class EditTourActivity extends AppCompatActivity {
+    private ActivityEditTourBinding binding;
     private TourDatabase helper;
-    private String tourTitle,tourLocation, startDate, endDate, tourDesc;
-    private boolean result;
+    private int tourId;
 
+    private String tourTitle,tourLocation, startDate, endDate, tourDesc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil. setContentView(this, R.layout.activity_add_tour);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_tour);
 
         helper = new TourDatabase(this);
+
+        if(getIntent().getExtras() != null){
+            tourId = Integer.parseInt(getIntent().getStringExtra("tourId"));
+            tourTitle = getIntent().getStringExtra("tourTitle");
+            tourLocation = getIntent().getStringExtra("tourLocation");
+            startDate = getIntent().getStringExtra("startDate");
+            endDate = getIntent().getStringExtra("endDate");
+            tourDesc = getIntent().getStringExtra("tourDesc");
+
+            binding.tourTitleET.setText(tourTitle);
+            binding.tourLocationET.setText(tourLocation);
+            binding.startDateET.setText(startDate);
+            binding.endDateET.setText(endDate);
+            binding.tourDescET.setText(tourDesc);
+        }
+
 
         binding.startDateET.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,9 +62,9 @@ public class AddTourActivity extends AppCompatActivity {
             }
         });
 
-        tourDataInsert();
-    }
+        tourDataUpdate();
 
+    }
 
     private void openStartDatePicker() {
         DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -107,9 +122,8 @@ public class AddTourActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    private void tourDataInsert() {
-        result = false;
-        binding.AddTourBtn.setOnClickListener(new View.OnClickListener() {
+    private void tourDataUpdate() {
+        binding.updateTourBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 tourTitle = binding.tourTitleET.getText().toString();
@@ -119,49 +133,28 @@ public class AddTourActivity extends AppCompatActivity {
                 tourDesc = binding.tourDescET.getText().toString();
 
                 if(tourTitle.equals("")){
-                    Toast.makeText(AddTourActivity.this, "Please enter amount", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditTourActivity.this, "Please enter amount", Toast.LENGTH_SHORT).show();
                 }else if(tourLocation.equals("")){
-                    Toast.makeText(AddTourActivity.this, "Please enter location", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditTourActivity.this, "Please enter location", Toast.LENGTH_SHORT).show();
                 }else if(startDate.equals("")){
-                    Toast.makeText(AddTourActivity.this, "Please pickup start date", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditTourActivity.this, "Please pickup start date", Toast.LENGTH_SHORT).show();
                 }else if(endDate.equals("")){
-                    Toast.makeText(AddTourActivity.this, "Please pickup end date", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditTourActivity.this, "Please pickup end date", Toast.LENGTH_SHORT).show();
                 }else{
                     if (tourDesc.equals("")){
-                        long id = helper.insertData(tourTitle, tourLocation, startDate, endDate);
-                        result = true;
-                        if(result == true){
-                            binding.tourTitleET.setText("");
-                            binding.tourLocationET.setText("");
-                            binding.startDateET.setText("");
-                            binding.endDateET.setText("");
-                            binding.tourDescET.setText("");
-                        }
-                        Toast.makeText(AddTourActivity.this, "Tour inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddTourActivity.this, MainActivity.class));
+                        long id = helper.updateData(tourId, tourTitle, tourLocation, startDate, endDate);
+                        Toast.makeText(EditTourActivity.this, "Tour updated"+id, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditTourActivity.this, MainActivity.class));
                     }else{
-                        long id = helper.insertData(tourTitle, tourLocation, startDate, endDate, tourDesc);
-                        result = true;
-                        if(result == true){
-                            binding.tourTitleET.setText("");
-                            binding.tourLocationET.setText("");
-                            binding.startDateET.setText("");
-                            binding.endDateET.setText("");
-                            binding.tourDescET.setText("");
-                        }
-                        Toast.makeText(AddTourActivity.this, "Tour inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddTourActivity.this, MainActivity.class));
+                        long id = helper.updateData(tourId, tourTitle, tourLocation, startDate, endDate, tourDesc);
+                        Toast.makeText(EditTourActivity.this, "Tour updated"+id, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditTourActivity.this, MainActivity.class));
                     }
 
-
-
                 }
-
-
             }
         });
     }
-
 
 
 

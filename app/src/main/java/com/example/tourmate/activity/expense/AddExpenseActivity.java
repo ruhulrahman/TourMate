@@ -16,6 +16,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.tourmate.R;
+import com.example.tourmate.activity.tour.DetailsTourActivity;
 import com.example.tourmate.databinding.ActivityAddExpenseBinding;
 import com.example.tourmate.helper.ExpenseDatabase;
 
@@ -137,7 +138,7 @@ public class AddExpenseActivity extends AppCompatActivity {
                             binding.costSpinner.setSelection(0);
                         }
                         Toast.makeText(AddExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddExpenseActivity.this, ViewExpenseActivity.class));
+                        startActivity(new Intent(AddExpenseActivity.this, DetailsTourActivity.class));
                     }else{
                         long id = helper.insertData(amount, payment, date, time, desc, costType, tourId);
                         result = true;
@@ -150,7 +151,7 @@ public class AddExpenseActivity extends AppCompatActivity {
                             binding.costSpinner.setSelection(0);
                         }
                         Toast.makeText(AddExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddExpenseActivity.this, ViewExpenseActivity.class));
+                        startActivity(new Intent(AddExpenseActivity.this, DetailsTourActivity.class));
                     }
 
 

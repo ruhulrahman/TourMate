@@ -24,7 +24,6 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
     private ExpenseDatabase helper;
     private boolean result=false;
     private Context context;
-    private Double sumAmount = 0.00;
 
     public ExpenseAdapter(List<Expense> expenses, ExpenseDatabase helper, Context context) {
         this.expenses = expenses;
