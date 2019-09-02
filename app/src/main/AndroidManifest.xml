@@ -51,11 +51,7 @@
             android:name=".activity.expense.AddExpenseActivity"
             android:label="@string/add_expense"
             android:theme="@style/ActionBarPomegrane">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.SignUpActivity"

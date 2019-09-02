@@ -7,9 +7,9 @@
         android:title="Trip"
         app:showAsAction="always" />
     <item
-        android:icon="@drawable/ic_photo_camera_black_24dp"
-        android:id="@+id/memories"
-        android:title="Memories"
+        android:icon="@drawable/ic_cloud_black_24dp"
+        android:id="@+id/weather"
+        android:title="Weather"
         app:showAsAction="always" />
 
     <item
