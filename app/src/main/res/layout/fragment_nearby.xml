@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/atm"
             android:layout_weight="1"
-            android:src="@drawable/ic_hotel_black_24dp"/>
+            android:src="@drawable/ic_account_balance_black_24dp"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

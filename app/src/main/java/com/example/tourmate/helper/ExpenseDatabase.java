@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import androidx.annotation.Nullable;
+
 public class ExpenseDatabase extends Database {
 
     public static String TABLE_NAME = "expense";
@@ -24,9 +26,9 @@ public class ExpenseDatabase extends Database {
         super(context, DATABASE_NAME, null, VERSION);
     }
 
-//    public ExpenseDatabase(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-//        super(context, name, factory, version);
-//    }
+    public ExpenseDatabase(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
 
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(create_table);
@@ -37,7 +39,7 @@ public class ExpenseDatabase extends Database {
 
     }
 
-    public long insertData(Double amount, String payment, String date, String time, String cost, int tourId) {
+    public long insertData(Double amount, String payment, String date, String time, String cost, String tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_AMOUNT, amount);
         contentValues.put(COL_PAYMENT_TYPE, payment);
@@ -52,7 +54,7 @@ public class ExpenseDatabase extends Database {
         return id;
     }
 
-    public long insertData(Double amount, String payment, String date, String time, String desc, String cost, int tourId) {
+    public long insertData(Double amount, String payment, String date, String time, String desc, String cost, String tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_AMOUNT, amount);
         contentValues.put(COL_PAYMENT_TYPE, payment);
@@ -62,8 +64,14 @@ public class ExpenseDatabase extends Database {
         contentValues.put(COL_COST_TYPE, cost);
         contentValues.put(COL_TOUR_ID, tourId);
 
+//        SQLiteDatabase sqLiteDatabase = null;
+//        sqLiteDatabase = this.getWritableDatabase();
+//        long id = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
+//        sqLiteDatabase.close();
+//        return id;
+
         SQLiteDatabase sqLiteDatabase = null;
-        sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase = this.getReadableDatabase();
         long id = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         sqLiteDatabase.close();
         return id;
@@ -82,7 +90,7 @@ public class ExpenseDatabase extends Database {
         getReadableDatabase().delete(TABLE_NAME, "Id=?", new String[]{String.valueOf(id)});
     }
 
-    public long updateData(int id, Double amount, String payment, String date, String time, String desc, String cost, int tourId) {
+    public long updateData(int id, Double amount, String payment, String date, String time, String desc, String cost, String tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_ID, id);
         contentValues.put(COL_AMOUNT, amount);
@@ -100,7 +108,7 @@ public class ExpenseDatabase extends Database {
         return 0;
     }
 
-    public long updateData(int id, Double amount, String payment, String date, String time, String cost, int tourId) {
+    public long updateData(int id, Double amount, String payment, String date, String time, String cost, String tourId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_ID, id);
         contentValues.put(COL_AMOUNT, amount);

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tourmate">
 
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -9,6 +10,8 @@
     <uses-feature android:name="android.hardware.location.gps"/>
     <uses-feature android:name="android.hardware.location.network"/>
 
+=======
+>>>>>>> 3f7b0e0aaa4433c934bf7ed75c86ce6fb54a2fea
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,27 +19,52 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity
             android:name=".EditExpenseActivity"
             android:label="Edit Expense"
             android:theme="@style/ActionBarPomegrane" />
         <activity android:name=".activity.DetailsTourActivity" />
         <activity android:name=".activity.AddTourActivity" />
+=======
+        <activity android:name=".activity.member.ViewMemberDetailsActivity"></activity>
+        <activity android:name=".activity.member.EditMemberActivity" />
+        <activity android:name=".activity.member.ViewMemberActivity" />
+        <activity android:name=".activity.member.AddMemberActivity" />
+        <activity android:name=".activity.profile.EditProfileActivity" />
         <activity
-            android:name=".activity.ExpenseDetailsActivity"
+            android:name=".activity.expense.EditExpenseActivity"
+            android:label="Edit Expense"
+            android:theme="@style/ActionBarPomegrane" />
+        <activity android:name=".activity.tour.DetailsTourActivity" />
+        <activity android:name=".activity.tour.AddTourActivity" />
+>>>>>>> 3f7b0e0aaa4433c934bf7ed75c86ce6fb54a2fea
+        <activity
+            android:name=".activity.expense.ExpenseDetailsActivity"
             android:label="View Expense Details"
             android:theme="@style/ActionBarPomegrane" />
         <activity
-            android:name=".activity.ViewExpenseActivity"
+            android:name=".activity.expense.ViewExpenseActivity"
             android:label="@string/add_expense"
             android:theme="@style/ActionBarPomegrane" />
+<<<<<<< HEAD
 
+=======
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+>>>>>>> 3f7b0e0aaa4433c934bf7ed75c86ce6fb54a2fea
         <activity
             android:name=".activity.GoogleMapsActivity"
             android:label="@string/title_activity_google_maps" />
 
         <activity
-            android:name=".activity.AddExpenseActivity"
+            android:name=".activity.expense.AddExpenseActivity"
             android:label="@string/add_expense"
             android:theme="@style/ActionBarPomegrane"></activity>
         <activity
@@ -69,5 +97,13 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+>>>>>>> 3f7b0e0aaa4433c934bf7ed75c86ce6fb54a2fea
 </manifest>
