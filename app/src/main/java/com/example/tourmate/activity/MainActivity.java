@@ -1,18 +1,18 @@
 package com.example.tourmate.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import com.example.tourmate.R;
 import com.example.tourmate.fragment.MemoriesFragment;
+import com.example.tourmate.fragment.NearbyFragment;
 import com.example.tourmate.fragment.ProfileFragment;
 import com.example.tourmate.fragment.TripFragment;
-import com.example.tourmate.fragment.WalletFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,13 +30,14 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.memories:
                     replaceFragment(new MemoriesFragment());
                     return true;
-                case R.id.wallet:
-                    replaceFragment(new WalletFragment());
+                case R.id.nearByMap:
+                    replaceFragment(new NearbyFragment());
                     return true;
                 case R.id.profile:
                     replaceFragment(new ProfileFragment());
                     return true;
             }
+
             return false;
         }
     };

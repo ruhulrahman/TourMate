@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/demoTripNameTvId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sajekt Tour"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/demoTripDescriptTvId"
+        android:text="Tour Description"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/demoTripFromDateTvId"
+        android:text="Tour Description"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/demoTriptoDateTvId"
+        android:text="Tour Description"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/demoTripDetailsTvId"
+        android:text="Details"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/demoTripMemoriesTvId"
+        android:text="Memories"/>
+</LinearLayout>

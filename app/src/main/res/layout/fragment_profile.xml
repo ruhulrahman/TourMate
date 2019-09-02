@@ -1,29 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.ProfileFragment">
-    <FrameLayout
+
+    <RelativeLayout
+        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
+        android:layout_height="350dp"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/provat"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FFF"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:src="@drawable/image"
-                android:scaleType="fitXY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Provat" />
-        </LinearLayout>
-    </FrameLayout>
+            android:layout_height="wrap_content"
+            android:text="Provat Mahato"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="36dp"/>
 
-    <!-- TODO: Update blank fragment layout -->
+        <TextView
+
+            android:layout_marginTop="44dp"
+            android:textColor="#BA30189B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_phone_black_24dp"
+            android:text="+8801770680326"
+            android:textSize="25dp"
+            android:paddingLeft="33dp"
+            android:drawablePadding="22dp"/>
+        <TextView
+
+            android:layout_marginTop="9dp"
+            android:textColor="#BA30189B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/email_black_24dp"
+            android:text="pkmahato910@gmail.com"
+            android:textSize="25dp"
+            android:paddingLeft="33dp"
+            android:drawablePadding="22dp"/>
+        <TextView
+
+            android:layout_marginTop="9dp"
+            android:textColor="#BA30189B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/group_add_black_24dp"
+            android:text="add to group"
+            android:textSize="25dp"
+            android:paddingLeft="33dp"
+            android:drawablePadding="22dp"/>
+
+    </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
+
