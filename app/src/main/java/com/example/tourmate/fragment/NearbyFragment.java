@@ -63,7 +63,7 @@ public class NearbyFragment extends Fragment implements
     private static final int Request_User_Location_Code = 99;
     private double latitide, longitude;
     private int ProximityRadius = 10000;
-    private ImageButton hospitalBtn,hotelBtn,resturantBtn;
+    private ImageButton hospitalBtn,hotelBtn,resturantBtn,atm;
 
 
     public NearbyFragment() {
@@ -91,6 +91,8 @@ public class NearbyFragment extends Fragment implements
         hospitalBtn = v.findViewById(R.id.hospital);
         resturantBtn = v.findViewById(R.id.resturant);
         hotelBtn = v.findViewById(R.id.hotel);
+        atm = v.findViewById(R.id.atm);
+
         getPermission();
         getCurrentLocation();
 
@@ -114,6 +116,28 @@ public class NearbyFragment extends Fragment implements
 
             }
         });
+        atm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String hospital = "atm";
+                Object transferData[] = new Object[2];
+                GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+
+
+                mMap.clear();
+                String url = getUrl(latitide, longitude, hospital);
+                transferData[0] = mMap;
+                transferData[1] = url;
+
+                getNearbyPlaces.execute(transferData);
+                Toast.makeText(getActivity(), "Searching for Nearby ATM...", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
 
         hotelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
