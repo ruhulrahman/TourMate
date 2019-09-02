@@ -3,13 +3,13 @@ package com.example.tourmate.model;
 public class Expense {
     private int id;
     private Double amount;
-    private String payment, date, time, desc, costType;
+    private String payment, date, time, desc, costType, tourId;
 
     public Expense() {
 
     }
 
-    public Expense(int id, Double amount, String payment, String date, String time, String desc, String costType) {
+    public Expense(int id, Double amount, String payment, String date, String time, String desc, String costType, String tourId) {
         this.id = id;
         this.amount = amount;
         this.payment = payment;
@@ -17,6 +17,7 @@ public class Expense {
         this.time = time;
         this.desc = desc;
         this.costType = costType;
+        this.tourId = tourId;
     }
 
     public int getId() {
@@ -45,5 +46,9 @@ public class Expense {
 
     public String getCostType() {
         return costType;
+    }
+
+    public String getTourId() {
+        return tourId;
     }
 }
