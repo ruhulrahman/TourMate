@@ -11,7 +11,9 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.example.tourmate.R;
+import com.example.tourmate.activity.MainActivity;
 import com.example.tourmate.databinding.ActivityAddTourBinding;
+import com.example.tourmate.fragment.TripFragment;
 import com.example.tourmate.helper.TourDatabase;
 
 import java.text.ParseException;
@@ -136,7 +138,7 @@ public class AddTourActivity extends AppCompatActivity {
                             binding.tourDescET.setText("");
                         }
                         Toast.makeText(AddTourActivity.this, "Tour inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddTourActivity.this, ViewTourActivity.class));
+                        startActivity(new Intent(AddTourActivity.this, MainActivity.class));
                     }else{
                         long id = helper.insertData(tourTitle, tourLocation, startDate, endDate, tourDesc);
                         result = true;
@@ -148,7 +150,7 @@ public class AddTourActivity extends AppCompatActivity {
                             binding.tourDescET.setText("");
                         }
                         Toast.makeText(AddTourActivity.this, "Tour inserted"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddTourActivity.this, ViewTourActivity.class));
+                        startActivity(new Intent(AddTourActivity.this, MainActivity.class));
                     }
 
 

@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.example.tourmate.R;
+import com.example.tourmate.activity.MainActivity;
 import com.example.tourmate.databinding.ActivityEditTourBinding;
 import com.example.tourmate.helper.TourDatabase;
 
@@ -143,11 +144,11 @@ public class EditTourActivity extends AppCompatActivity {
                     if (tourDesc.equals("")){
                         long id = helper.updateData(tourId, tourTitle, tourLocation, startDate, endDate);
                         Toast.makeText(EditTourActivity.this, "Tour updated"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(EditTourActivity.this, ViewTourActivity.class));
+                        startActivity(new Intent(EditTourActivity.this, MainActivity.class));
                     }else{
                         long id = helper.updateData(tourId, tourTitle, tourLocation, startDate, endDate, tourDesc);
                         Toast.makeText(EditTourActivity.this, "Tour updated"+id, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(EditTourActivity.this, ViewTourActivity.class));
+                        startActivity(new Intent(EditTourActivity.this, MainActivity.class));
                     }
 
                 }

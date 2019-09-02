@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.tourmate.R;
+import com.example.tourmate.activity.expense.AddExpenseActivity;
+import com.example.tourmate.activity.expense.ExpenseDetailsActivity;
+import com.example.tourmate.activity.expense.ViewExpenseActivity;
 import com.example.tourmate.model.Tour;
 
 import java.util.List;
@@ -67,5 +70,13 @@ public class DetailsTourActivity extends AppCompatActivity {
 
     public void back(View view) {
         onBackPressed();
+    }
+
+    public void ViewExpenseClick(View view) {
+        startActivity(new Intent(DetailsTourActivity.this, ViewExpenseActivity.class));
+    }
+
+    public void AddExpenseClick(View view) {
+        startActivity(new Intent(DetailsTourActivity.this, AddExpenseActivity.class));
     }
 }
