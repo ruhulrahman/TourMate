@@ -18,13 +18,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity
-            android:name=".EditExpenseActivity"
-            android:label="Edit Expense"
-            android:theme="@style/ActionBarPomegrane" />
-        <activity android:name=".activity.DetailsTourActivity" />
-        <activity android:name=".activity.AddTourActivity" />
-
         <activity android:name=".activity.tour.EditTourActivity"
             android:label="Edit Tour"
             android:theme="@style/ActionBarPomegrane">
@@ -63,7 +56,7 @@
             android:theme="@style/ActionBarPomegrane" />
         <activity
             android:name=".activity.expense.ViewExpenseActivity"
-            android:label="@string/add_expense"
+            android:label="@string/add_expense"/>
 
         <activity
             android:name=".activity.GoogleMapsActivity"
