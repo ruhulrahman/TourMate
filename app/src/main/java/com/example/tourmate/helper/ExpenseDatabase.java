@@ -48,7 +48,8 @@ public class ExpenseDatabase extends Database {
         contentValues.put(COL_COST_TYPE, cost);
         contentValues.put(COL_TOUR_ID, tourId);
 
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        SQLiteDatabase sqLiteDatabase = null;
+        sqLiteDatabase = this.getReadableDatabase();
         long id = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         sqLiteDatabase.close();
         return id;

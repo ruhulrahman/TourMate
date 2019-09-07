@@ -137,7 +137,7 @@ public class AddExpenseActivity extends AppCompatActivity {
                             binding.paymentSpinner.setSelection(0);
                             binding.costSpinner.setSelection(0);
                         }
-                        Toast.makeText(AddExpenseActivity.this, "Data inserted"+id, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddExpenseActivity.this, "Data inserted "+id, Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(AddExpenseActivity.this, DetailsTourActivity.class));
                     }else{
                         long id = helper.insertData(amount, payment, date, time, desc, costType, tourId);

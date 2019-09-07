@@ -56,7 +56,9 @@
             android:theme="@style/ActionBarPomegrane" />
         <activity
             android:name=".activity.expense.ViewExpenseActivity"
-            android:label="@string/add_expense"/>
+            android:label="View Expense">
+
+        </activity>
 
         <activity
             android:name=".activity.GoogleMapsActivity"
@@ -88,11 +90,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:theme="@style/noActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

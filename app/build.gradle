@@ -32,15 +32,7 @@ dependencies {
 
     //for Cirle Image
     implementation 'de.hdodenhof:circleimageview:3.0.1'
-
-    //implementation 'com.google.firebase:firebase-core:16.0.0'
-
-    // Add the Firebase SDK for Google Analytics
-//    implementation 'com.google.firebase:firebase-core:17.2.0'
-//    implementation 'com.google.firebase:firebase-analytics:17.2.0'
-//    implementation 'com.google.firebase:firebase-auth:19.0.0'
-//    implementation 'com.google.firebase:firebase-firestore:21.0.0'
-//    implementation 'com.google.firebase:firebase-database:17.0.0'
+    
 
     implementation 'com.google.firebase:firebase-core:17.0.0'
     implementation 'com.google.firebase:firebase-auth:17.0.0'
